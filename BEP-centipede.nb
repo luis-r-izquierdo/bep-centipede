@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    629338,      14337]
-NotebookOptionsPosition[    603600,      13682]
-NotebookOutlinePosition[    604233,      13705]
-CellTagsIndexPosition[    604190,      13702]
+NotebookDataLength[    651179,      14797]
+NotebookOptionsPosition[    624816,      14127]
+NotebookOutlinePosition[    625448,      14150]
+CellTagsIndexPosition[    625405,      14147]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -68,7 +68,9 @@ Cell["License", "Section",
 d305596c1f3a"],
 
 Cell[TextData[{
- "BEP-centipede is a ",
+ "BEP-",
+ "Centipede",
+ " is a ",
  StyleBox["Mathematica",
   FontSlant->"Italic"],
  " notebook created to compute several solutions and theorems explained in \
@@ -105,8 +107,9 @@ the GNU General Public License at ",
   ButtonData->{
     URL["https://www.gnu.org/licenses/gpl.html"], None},
   ButtonNote->"https://www.gnu.org/licenses/gpl.html"],
- ".\n\nContact information: \nLuis R. Izquierdo \nUniversity of Burgos, \
-Spain. \nwebsite: ",
+ ".\n\nFinancial support from NSF Grant SES-1458992 is gratefully \
+acknowledged.\n\nContact information: \nLuis R. Izquierdo \nUniversity of \
+Burgos, Spain. \nwebsite: ",
  ButtonBox["http://luis.izqui.org",
   BaseStyle->"Hyperlink",
   ButtonData->{
@@ -118,9 +121,10 @@ Spain. \nwebsite: ",
   3.7010924882946177`*^9, 3.701092648904615*^9, {3.701092683502741*^9, 
    3.701092911985737*^9}, {3.7010929559854403`*^9, 3.701092956943893*^9}, {
    3.701092992976839*^9, 3.7010930168517303`*^9}, {3.7010930523874273`*^9, 
-   3.701093062710374*^9}, {3.7010931502363234`*^9, 
-   3.701093216924671*^9}},ExpressionUUID->"f33e998f-43b2-4711-949b-\
-525f09a5687d"]
+   3.701093062710374*^9}, {3.7010931502363234`*^9, 3.701093216924671*^9}, {
+   3.7015003221964827`*^9, 3.7015003316681223`*^9}, 
+   3.701500576415395*^9},ExpressionUUID->"8359490b-f256-47f9-935c-\
+eabc8ae0a58a"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -294,14 +298,14 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
-Cell["Mean Dynamics", "Subsection",
+Cell["Mean dynamics", "Subsection",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True,
  CellChangeTimes->{{3.692963227845255*^9, 3.69296325552354*^9}, 
    3.692963296342883*^9, 3.6929634614063253`*^9, 3.692963707587676*^9, 
-   3.6968286681280327`*^9, {3.696943804057803*^9, 
-   3.696943805652946*^9}},ExpressionUUID->"8580c788-4465-4f77-ae5e-\
+   3.6968286681280327`*^9, {3.696943804057803*^9, 3.696943805652946*^9}, 
+   3.701500653368442*^9},ExpressionUUID->"8580c788-4465-4f77-ae5e-\
 d51feadf8abb"],
 
 Cell[CellGroupData[{
@@ -360,13 +364,14 @@ StyleBox[\"omitLastVariable\",
 FontSlant->\"Italic\"]\):False, \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):5 ] returns the mean dynamics of the BEP dynamics \
-for a centipede game of length \!\(\*
+for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule.\n\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1).\n\n\
+\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -380,7 +385,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"useFullSimplify\",
 FontSlant->\"Italic\"]\) is an optional (boolean) parameter. If \!\(\*
 StyleBox[\"useFullSimplify\",
@@ -640,18 +645,18 @@ StyleBox[\"useFullSimplify\",
 FontSlant->\"Italic\"]\):False, \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] returns the mean dynamics of the BEP dynamics \
-for a centipede game of length \!\(\*
+for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule, and eliminating the first \
-variables using following two identities:\n\\t x[1] == 1 - \
-\!\(\*UnderoverscriptBox[\(\[Sum]\), \(i = 2\), \(s1\)]\)x[i] \n\\t y[1] == 1 \
-- \!\(\*UnderoverscriptBox[\(\[Sum]\), \(i = 2\), \(s2\)]\)y[i]\nwhere s1 and \
-s2 are the number of strategies for the first movers and the second movers \
-respectively.\n\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1), and \
+eliminating the first variables using the following two identities:\n\\t x[1] \
+== 1 - \!\(\*UnderoverscriptBox[\(\[Sum]\), \(i = 2\), \(s1\)]\)x[i] \n\\t \
+y[1] == 1 - \!\(\*UnderoverscriptBox[\(\[Sum]\), \(i = 2\), \(s2\)]\)y[i]\n\
+where s1 and s2 are the number of strategies for the first movers and the \
+second movers respectively.\n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -665,7 +670,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"useFullSimplify\",
 FontSlant->\"Italic\"]\) is an optional (boolean) parameter. If \!\(\*
 StyleBox[\"useFullSimplify\",
@@ -827,7 +832,9 @@ messages.\>\""}], " ", ";"}],
    3.698739109534992*^9}, {3.6987397780134497`*^9, 3.698739801107712*^9}, {
    3.698740023778726*^9, 3.698740040590448*^9}, {3.698740845484922*^9, 
    3.698740846220524*^9}, 3.699250824460868*^9, {3.6992533684275913`*^9, 
-   3.6992534104097347`*^9}, 3.7002926503978233`*^9},
+   3.6992534104097347`*^9}, 3.7002926503978233`*^9, {3.701500410996274*^9, 
+   3.701500425564539*^9}, {3.7015008819266243`*^9, 3.7015009040076103`*^9}, {
+   3.7015009516317663`*^9, 3.70150095658083*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"4d4eb097-fedb-479c-8152-96e322899a23"]
 }, Closed]],
@@ -3257,7 +3264,7 @@ Cell[BoxData[{
 StyleBox[\"MD\",
 FontSlant->\"Italic\"]\) , \!\(\*
 StyleBox[\"verbosity\",
-FontSlant->\"Italic\"]\):1 ] returns the jacobian of the mean dynamics \!\(\*
+FontSlant->\"Italic\"]\):1 ] returns the Jacobian of the mean dynamics \!\(\*
 StyleBox[\"MD\",
 FontSlant->\"Italic\"]\), which must be given as a parameter. The format of \
 the parameter \!\(\*
@@ -3281,7 +3288,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n\n\!\(\*
+the Centipede game.\n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -3356,12 +3363,19 @@ messages.\>\""}], " ", ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
 StyleBox[\"MD\",
 FontSlant->\"Italic\"]\) , \!\(\*
 StyleBox[\"verbosity\",
-FontSlant->\"Italic\"]\):1 ] returns the projected jacobian of the mean \
+FontSlant->\"Italic\"]\):1 ] returns the projected Jacobian of the mean \
 dynamics \!\(\*
 StyleBox[\"MD\",
 FontSlant->\"Italic\"]\), which must be given as a parameter. The projected \
-jacobian is the projection of the regular jacobian over the two simplices. \
-The format of the parameter \!\(\*
+Jacobian is the projection of the regular Jacobian over the two simplices. \
+Specifically, the projection is obtained by pre- and post-multiplying the \
+Jacobian matrix by the orthogonal projection of \!\(\*SuperscriptBox[\"\
+\[DoubleStruckCapitalR]\", 
+StyleBox[\"s\",
+FontSlant->\"Italic\"]]\) onto \!\(\*
+StyleBox[\"T\",
+FontSlant->\"Italic\"]\)\[CapitalXi] (see Appendix A of the paper for \
+details). The format of the parameter \!\(\*
 StyleBox[\"MD\",
 FontSlant->\"Italic\"]\) that the user must provide is the same format of the \
 output given by the function MeanDynamics. Thus, a common use of this \
@@ -3382,7 +3396,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n\n\!\(\*
+the Centipede game.\n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -3473,6 +3487,61 @@ messages.\>\""}], " ", ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
    "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
+   RowBox[{
+    RowBox[{"PostProjectedJacobian", "::", "usage"}], "=", 
+    "\"\<PostProjectedJacobian[ \!\(\*
+StyleBox[\"MD\",
+FontSlant->\"Italic\"]\) , \!\(\*
+StyleBox[\"verbosity\",
+FontSlant->\"Italic\"]\):1 ] returns the post-projected Jacobian of the mean \
+dynamics \!\(\*
+StyleBox[\"MD\",
+FontSlant->\"Italic\"]\), which must be given as a parameter. The \
+post-projected Jacobian is obtained by post-multiplying the Jacobian matrix \
+by the orthogonal projection of \
+\!\(\*SuperscriptBox[\"\[DoubleStruckCapitalR]\", 
+StyleBox[\"s\",
+FontSlant->\"Italic\"]]\) onto \!\(\*
+StyleBox[\"T\",
+FontSlant->\"Italic\"]\)\[CapitalXi] (see Appendix A of the paper for \
+details). The format of the parameter \!\(\*
+StyleBox[\"MD\",
+FontSlant->\"Italic\"]\) that the user must provide is the same format of the \
+output given by the function MeanDynamics. Thus, a common use of this \
+function is:\n\n\\tPostProjectedJacobian[ MeanDynamics[\!\(\*
+StyleBox[\"testSetRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"tieBreakingRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\)] ]\n\nwhere:\n- \!\(\*
+StyleBox[\"testSetRule\",
+FontSlant->\"Italic\"]\) is a string that indicates the test set rule. \
+Possible values are: \\\"all\\\" (test all), \\\"two\\\" (test two) or \
+\\\"adj\\\" (test adjacent).\n- \!\(\*
+StyleBox[\"tieBreakingRule\",
+FontSlant->\"Italic\"]\) is a string that indicates the tie breaking rule. \
+Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
+or \\\"unif\\\" (uniform if tie).\n- \!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
+the Centipede game.\n\n\!\(\*
+StyleBox[\"PARAMETERS\",
+FontWeight->\"Bold\",
+FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
+StyleBox[\"MD\",
+FontSlant->\"Italic\"]\) is the function of which you wish to compute the \
+Jacobian, expressed in the same format of the output given by the function \
+MeanDynamics.\n- \!\(\*
+StyleBox[\"verbosity\",
+FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
+controls the number of messages that are shown by the function. The higher \
+the value of verbosity, the more messages are printed along the execution of \
+any function. 0 prints no messages. 10 prints all implemented \
+messages.\>\""}], " ", ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
    RowBox[{"PostProjectedJacobian", "[", 
     RowBox[{"EM_", ",", 
      RowBox[{"verbosity_:", "1"}]}], "]"}], ":=", 
@@ -3559,7 +3628,12 @@ messages.\>\""}], " ", ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
    3.6992519054070673`*^9, 3.69925190802477*^9}, {3.699586157796015*^9, 
    3.6995861949361057`*^9}, {3.699586250771706*^9, 3.699586469856123*^9}, {
    3.699586513704155*^9, 3.6995865199351797`*^9}, {3.7002869632958612`*^9, 
-   3.700286982048175*^9}, {3.700299744133972*^9, 3.700299821995768*^9}},
+   3.700286982048175*^9}, {3.700299744133972*^9, 3.700299821995768*^9}, {
+   3.701500427902754*^9, 3.7015004290613127`*^9}, {3.7015014903650923`*^9, 
+   3.701501529940853*^9}, {3.701501816347459*^9, 3.7015018403316307`*^9}, {
+   3.701501911029311*^9, 3.701501935171547*^9}, {3.7015019792022543`*^9, 
+   3.701501989600915*^9}, {3.701502033386196*^9, 3.701502125772025*^9}, {
+   3.701502337929448*^9, 3.701502351774457*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"8d5b138f-de6f-4a09-9825-27418d4ee3d9"]
 }, Closed]],
@@ -3596,13 +3670,15 @@ StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):5, \!\(\*
 StyleBox[\"prec\",
 FontSlant->\"Italic\"]\):precision ] returns the exact rest points of the BEP \
-dynamics for a centipede game of length \!\(\*
+dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule.\[IndentingNewLine]\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). The \
+computation of the rest points is performed by obtaining a \
+Gr\[ODoubleDot]bner basis.\[IndentingNewLine]\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -3616,7 +3692,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"useFullSimplify\",
 FontSlant->\"Italic\"]\) is an optional (boolean) parameter. If \!\(\*
 StyleBox[\"useFullSimplify\",
@@ -4042,7 +4118,9 @@ the Gr\[ODoubleDot]bner basis: \\n\>\"", ",", " ",
    3.6997125356503067`*^9}, {3.6997132757889957`*^9, 3.699713333443652*^9}, {
    3.699713370019705*^9, 3.699713372830482*^9}, {3.699713423830524*^9, 
    3.699713424771783*^9}, {3.699720648393248*^9, 3.6997206595511417`*^9}, {
-   3.699720691288006*^9, 3.6997206928966503`*^9}},
+   3.699720691288006*^9, 3.6997206928966503`*^9}, {3.7015004348465433`*^9, 
+   3.701500437546277*^9}, 3.701500968609207*^9, {3.701501139792103*^9, 
+   3.701501158352508*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"f09878dc-df6e-450e-a7ae-27b2f26e9eeb"]
 }, Closed]],
@@ -4075,19 +4153,19 @@ FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"step\",
-FontSlant->\"Italic\"]\):2.^-4 ] returns the approximate interior rest point \
-of the BEP dynamics for a centipede game of length \!\(\*
+FontSlant->\"Italic\"]\):2.^-4 ] returns an approximate rest point of the BEP \
+dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule. \n\nThis function employs the \
-Euler method to find a fixed point of the equation \n\\t \
-\!\(\*SubscriptBox[\(x\), \(t + 1\)]\) = \!\(\*SubscriptBox[\(x\), \(t\)]\) + \
-step * MeanDynamics(\!\(\*SubscriptBox[\(x\), \(t\)]\)) \n      using \
-floating-point arithmetic and starting from the center of the simplices.\
-\[IndentingNewLine]\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). \n\n\
+This function employs the Euler method to find a fixed point of the equation \
+\n\\t \!\(\*SubscriptBox[\(x\), \(t + 1\)]\) = \!\(\*SubscriptBox[\(x\), \
+\(t\)]\) + step * MeanDynamics(\!\(\*SubscriptBox[\(x\), \(t\)]\)) \n      \
+using floating-point arithmetic and starting from the center of the \
+simplices.\[IndentingNewLine]\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -4101,7 +4179,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game\n- \!\(\*
+the Centipede game\n- \!\(\*
 StyleBox[\"step\",
 FontSlant->\"Italic\"]\) is an optional parameter. It determines the \
 magnitude of the step used in the Euler method.\>\""}], " ", ";"}], 
@@ -4256,24 +4334,24 @@ StyleBox[\"minIterations\",
 FontSlant->\"Italic\"]\):1, \!\(\*
 StyleBox[\"maxIterations\",
 FontSlant->\"Italic\"]\):200 ] returns the approximate rest points of the BEP \
-dynamics for a centipede game of length \!\(\*
+dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule.\n\nThis function employs the \
-Euler method to find a fixed point of the equation \n\\t \
-\!\(\*SubscriptBox[\(x\), \(t + 1\)]\) = \!\(\*SubscriptBox[\(x\), \(t\)]\) + \
-step * MeanDynamics(\!\(\*SubscriptBox[\(x\), \(t\)]\)) \n      using exact \
-rational arithmetic and starting from a rational point close to the output of \
-FloatingPointApproximateRestPoint.\n\nThe point returned by this function is \
-a fixed point in the sense that \!\(\*SubscriptBox[\(x\), \(t\)]\) and \
-\!\(\*SubscriptBox[\(x\), \(t + 1\)]\) (= \!\(\*SubscriptBox[\(x\), \(t\)]\) \
-+ step * MeanDynamics(\!\(\*SubscriptBox[\(x\), \(t\)]\))) are equal when \
-expressed with 6 digits of precision for numbers greater or equal to \
-\!\(\*SuperscriptBox[\(10\), \(-4\)]\), and 3 digits of precision for smaller \
-numbers).\[IndentingNewLine]\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1).\n\n\
+This function employs the Euler method to find a fixed point of the equation \
+\n\\t \!\(\*SubscriptBox[\(x\), \(t + 1\)]\) = \!\(\*SubscriptBox[\(x\), \
+\(t\)]\) + step * MeanDynamics(\!\(\*SubscriptBox[\(x\), \(t\)]\)) \n      \
+using exact rational arithmetic and starting from a rational point close to \
+the output of FloatingPointApproximateRestPoint.\n\nThe point returned by \
+this function is a fixed point in the sense that \!\(\*SubscriptBox[\(x\), \
+\(t\)]\) and \!\(\*SubscriptBox[\(x\), \(t + 1\)]\) (= \!\(\*SubscriptBox[\(x\
+\), \(t\)]\) + step * MeanDynamics(\!\(\*SubscriptBox[\(x\), \(t\)]\))) are \
+equal when expressed with 6 digits of precision for numbers greater or equal \
+to \!\(\*SuperscriptBox[\(10\), \(-4\)]\), and 3 digits of precision for \
+smaller numbers).\[IndentingNewLine]\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -4287,7 +4365,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 controls the number of messages that are shown by the function. The higher \
@@ -4716,7 +4794,11 @@ number of iterations that the Euler method is conducted.\>\""}], " ", ";"}],
    3.6992503548152027`*^9, 3.699250560359679*^9}, {3.699250620457304*^9, 
    3.6992507452626343`*^9}, {3.699250784594921*^9, 3.6992507856953487`*^9}, {
    3.701095651727941*^9, 3.701095669589156*^9}, 3.701105004881365*^9, {
-   3.7011622853429337`*^9, 3.7011622864096212`*^9}},
+   3.7011622853429337`*^9, 3.7011622864096212`*^9}, {3.7015004429578123`*^9, 
+   3.7015004512384644`*^9}, {3.701500973693204*^9, 3.701500979610585*^9}, {
+   3.701593228209036*^9, 3.701593266189296*^9}, {3.7015934917585382`*^9, 
+   3.701593493653356*^9}, {3.701593525300839*^9, 3.7015935605042143`*^9}, {
+   3.701593593020709*^9, 3.701593593548558*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"5c293add-696a-41fa-a1fc-79001887ac42"]
 }, Closed]],
@@ -4749,16 +4831,17 @@ StyleBox[\"d\",
 FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] returns the exact eigenvalues of the (projected) \
-Jacobian of the mean dynamics of the BEP dynamics for a centipede game of \
+Jacobian of the mean dynamics of the BEP dynamics for a Centipede game of \
 length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule, evaluated at a rational point \
-close to the exact rest point. This rational approximation is computed using \
-the function RationalApproximateRestPoint.\n\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1), \
+evaluated at a rational point close to the exact rest point. This rational \
+approximation is computed using the function RationalApproximateRestPoint.\n\n\
+\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -4772,7 +4855,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 controls the number of messages that are shown by the function. The higher \
@@ -4814,19 +4897,20 @@ StyleBox[\"d\",
 FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] returns the approximate eigenvalues of the \
-(projected) Jacobian of the mean dynamics of the BEP dynamics for a centipede \
+(projected) Jacobian of the mean dynamics of the BEP dynamics for a Centipede \
 game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule, evaluated at a \
-16-digit-precision approximation to a rational point close to the exact rest \
-point. The rational approximation is computed using the function \
-RationalApproximateRestPoint, and the 16-digit-precision approximation to the \
-rational number is computed using N[ ,16]. Thus, the computation of the \
-eigenvalues is conducted using arbitrary-precision numbers.\n\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1), \
+evaluated at a 16-digit-precision approximation to a rational point close to \
+the exact rest point. The rational approximation is computed using the \
+function RationalApproximateRestPoint, and the 16-digit-precision \
+approximation to the rational number is computed using N[ ,16]. Thus, the \
+computation of the eigenvalues is conducted using arbitrary-precision \
+numbers.\n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -4840,7 +4924,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 controls the number of messages that are shown by the function. The higher \
@@ -5097,7 +5181,8 @@ messages.\>\""}], " ", ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
    3.699703090746953*^9, 3.699703092708194*^9}, {3.699703140087376*^9, 
    3.699703152879236*^9}, {3.699703307410837*^9, 3.699703343490498*^9}, 
    3.7002067257136097`*^9, {3.701161718829686*^9, 3.70116172504992*^9}, {
-   3.701161772964473*^9, 3.701161773288969*^9}},
+   3.701161772964473*^9, 3.701161773288969*^9}, {3.7015004535650663`*^9, 
+   3.701500464409895*^9}, {3.701500990386951*^9, 3.701501003662244*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"ef3ddae7-5ab7-4988-8529-aade0de221fe"]
 }, Closed]],
@@ -5136,20 +5221,22 @@ StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1, \!\(\*
 StyleBox[\"prec\",
 FontSlant->\"Italic\"]\):precision ] analyzes the local stability of the \
-interior rest point of the BEP dynamics for a centipede game of length \!\(\*
+interior rest point of the BEP dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule. To conduct this analysis, the \
-function computes the exact eigenvalues of the (projected and reduced) \
-Jacobian of the mean dynamics of the BEP dynamics, evaluated at a rational \
-point close to the exact rest point. Then, using a perturbation theorem, it \
-computes a bound for the eigenvalues at the exact interior rest point. Using \
-the computed bound and the eigenvalues at the close rational point, the \
-function checks whether all the eignevalues at the exact interior rest point \
-have negative real part.\n\nThe function returns \!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). To \
+conduct this analysis, the function computes the exact eigenvalues of the \
+(projected and reduced) Jacobian of the mean dynamics of the BEP dynamics, \
+evaluated at a rational point close to the exact rest point (which is \
+computed by obtaining a Gr\[ODoubleDot]bner basis). Then, using a \
+perturbation theorem, it computes a bound for the eigenvalues at the exact \
+interior rest point. Using the computed bound and the eigenvalues at the \
+close rational point, the function checks whether all the eignevalues at the \
+exact interior rest point have negative real part. See Appendix B and Online \
+Appendix III of the paper for details.\n\nThe function returns \!\(\*
 StyleBox[\"True\",
 FontSlant->\"Italic\",
 FontVariations->{\"Underline\"->True}]\) if the conducted analysis concludes \
@@ -5170,7 +5257,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 controls the number of messages that are shown by the function. The higher \
@@ -5873,7 +5960,9 @@ local stability analysis is inconclusive\>\"", "]"}]}], "]"}], ";",
    3.700205849746344*^9}, {3.700205889894535*^9, 3.700205987913509*^9}, {
    3.700206021972896*^9, 3.700206178605164*^9}, {3.7002062606460943`*^9, 
    3.700206269716625*^9}, {3.700206426448998*^9, 3.700206439750455*^9}, 
-   3.7003038469401503`*^9},
+   3.7003038469401503`*^9, {3.701500465650917*^9, 3.701500467068069*^9}, 
+   3.7015010079062023`*^9, {3.701501214841956*^9, 3.701501222478916*^9}, {
+   3.701501375765902*^9, 3.701501389103445*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"71f3c586-8ec3-49fe-903a-a7d8435bb841"]
 }, Closed]],
@@ -5912,20 +6001,22 @@ StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1, \!\(\*
 StyleBox[\"prec\",
 FontSlant->\"Italic\"]\):precision ] analyzes the global stability of the \
-interior rest point of the BEP dynamics for a centipede game of length \!\(\*
+interior rest point of the BEP dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule. To conduct this analysis, the \
-function uses the Euclidean distance to the exact interior rest point (or a \
-reduced version of this distance, depending on the \!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). To \
+conduct this analysis, the function uses the Euclidean distance to the exact \
+interior rest point (or a reduced version of this distance, depending on the \
+\!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) used) as a tentative Lyapunov function.\n\nThe \
-function returns \!\(\*
+FontSlant->\"Italic\"]\) used) as a tentative Lyapunov function. The \
+computation of the exact interior rest point is performed by obtaining a Gr\
+\[ODoubleDot]bner basis.\n\nThe function returns \!\(\*
 StyleBox[\"True\",
 FontSlant->\"Italic\",
 FontVariations->{\"Underline\"->True}]\) if and only if the conducted \
@@ -5948,7 +6039,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 controls the number of messages that are shown by the function. The higher \
@@ -6475,7 +6566,9 @@ Lyapunov function equals 0:\\n\>\"", ",",
    3.698767051310917*^9}, {3.700207751126247*^9, 3.700207848074394*^9}, {
    3.7002078885243797`*^9, 3.700207965156487*^9}, {3.700208094029716*^9, 
    3.700208147252616*^9}, {3.7002082033443203`*^9, 3.700208218275858*^9}, {
-   3.700208263097587*^9, 3.700208276236389*^9}},
+   3.700208263097587*^9, 3.700208276236389*^9}, {3.7015004681577387`*^9, 
+   3.701500469721587*^9}, 3.70150101018886*^9, 3.7015012421990557`*^9, {
+   3.701501275500456*^9, 3.70150128523111*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"2b651595-f338-40b9-a1d5-41518a1d1265"]
 }, Closed]],
@@ -6507,7 +6600,7 @@ FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"nPoints\",
 FontSlant->\"Italic\"]\)] returns a list of \!\(\*
 StyleBox[\"nPoints\",
-FontSlant->\"Italic\"]\) random points for a centipede game of length \
+FontSlant->\"Italic\"]\) random points for a Centipede game of length \
 d\>\""}], " ", ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -6598,7 +6691,7 @@ StyleBox[\"d\",
 FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"nAgentsPerPopulation\",
 FontSlant->\"Italic\"]\)] returns a list of all the possible states in a \
-centipede game of length \!\(\*
+Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\" \",
@@ -6819,7 +6912,8 @@ FontSlant->\"Italic\"]\)\>\""}], " ", ";"}], "\[IndentingNewLine]",
    3.693575023375538*^9, 3.693575063787862*^9}, {3.693575123220561*^9, 
    3.6935752039380827`*^9}, {3.693576077465584*^9, 3.693576295087234*^9}, {
    3.6968264325108232`*^9, 3.696826460635049*^9}, {3.7002100565844917`*^9, 
-   3.700210064774343*^9}, {3.700210097005746*^9, 3.7002101466037683`*^9}},
+   3.700210064774343*^9}, {3.700210097005746*^9, 3.7002101466037683`*^9}, {
+   3.701500475872697*^9, 3.701500477346527*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"a4367b14-d13a-4ff4-9e7d-07e41b41b398"]
 }, Closed]],
@@ -6860,17 +6954,18 @@ FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"points\",
 FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"verbosity\",
-FontSlant->\"Italic\"]\):1 , \!\(\*
+FontSlant->\"Italic\"]\):1, \!\(\*
 StyleBox[\"samplesPerPack\",
 FontSlant->\"Italic\"]\):10^5 ] analyses the global stability of the BEP \
-dynamics for a centipede game of length \!\(\*
+dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule. This function uses the \
-Euclidean distance to the interior rest point computed using \!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). \
+This function uses the Euclidean distance to the interior rest point computed \
+using \!\(\*
 StyleBox[\"FloatingPointApproximateRestPoint\",
 FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\" \",
@@ -6880,10 +6975,40 @@ function at each of the points provided by the user (as fourth parameter, \
 called \!\(\*
 StyleBox[\"points\",
 FontSlant->\"Italic\"]\) above), using (IEEE 754) floating-point arithmetic.\n\
-\nThe function returns the list of points with a non-negative evaluation of \
-the derivative of the tentative Lyapunov function. Thus, if the function \
-returns an empty list, it means that the derivative of the tentative Lyapunov \
-function was strictly negative in all evaluated points. \n\n\!\(\*
+\nYou can create the list of points required as fourth parameter by using the \
+functions RandomPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"nPoints\",
+FontSlant->\"Italic\"]\)] and MeshPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"nAgentsPerPopulation\",
+FontSlant->\"Italic\"]\)]. Thus, for example, to run the function on \
+\!\(\*SuperscriptBox[\(10\), \(6\)]\) random points, you can evaluate:\n\n\
+\\tNumericalGlobalStabilityOfInteriorRestPointLyapunov[ \!\(\*
+StyleBox[\"testSetRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"tieBreakingRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), RandomPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\),\!\(\*SuperscriptBox[\(10\), \(6\)]\)] ]\n\n\\tAnd \
+to run the function on a grid with mesh 1/4, you can evaluate:\n\n\
+\\tNumericalGlobalStabilityOfInteriorRestPointLyapunov[ \!\(\*
+StyleBox[\"testSetRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"tieBreakingRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), MeshPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\),4] ]\n\nThe function returns the list of points with \
+a non-negative evaluation of the derivative of the tentative Lyapunov \
+function. Thus, if the function returns an empty list, it means that the \
+derivative of the tentative Lyapunov function was strictly negative in all \
+evaluated points. \n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
@@ -6897,13 +7022,22 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"points\",
 FontSlant->\"Italic\"]\) is the list of points at which the derivative of the \
 tentative Lyapunov function will be evaluated. Each point must be a list \
 containing \!\(\*
 StyleBox[\"d\",
-FontSlant->\"Italic\"]\) + 2 numbers.\n- \!\(\*
+FontSlant->\"Italic\"]\) + 2 numbers. You can use the functions RandomPoints[\
+\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"nPoints\",
+FontSlant->\"Italic\"]\)] and MeshPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"nAgentsPerPopulation\",
+FontSlant->\"Italic\"]\)] to create this list.\n- \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 controls the number of messages that are shown by the function. The higher \
@@ -7435,7 +7569,14 @@ interior rest point might be almost globally asymptotically stable\>\""}],
    3.7002156527969227`*^9}, {3.700215684333021*^9, 3.7002158250388393`*^9}, {
    3.700216445354175*^9, 3.700216445696219*^9}, {3.7002166508262463`*^9, 
    3.7002166511845713`*^9}, 3.700217397404954*^9, {3.7002927292676764`*^9, 
-   3.700292741810626*^9}},
+   3.700292741810626*^9}, 3.701498711782158*^9, {3.701500488983156*^9, 
+   3.7015004930320787`*^9}, 3.701501015420537*^9, {3.701522150354048*^9, 
+   3.701522245030851*^9}, {3.701522276171709*^9, 3.701522558276813*^9}, {
+   3.701522643826792*^9, 3.701522687474633*^9}, {3.701522838789741*^9, 
+   3.701522847279513*^9}, {3.701522895014895*^9, 3.701522917558978*^9}, {
+   3.701522968108387*^9, 3.701522968701797*^9}, {3.701523000858242*^9, 
+   3.70152300391463*^9}, {3.701523039940432*^9, 3.701523065891173*^9}, {
+   3.701523231044495*^9, 3.70152323140247*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"b2c2fb22-6e42-4220-8464-04d0f0df3c52"]
 }, Closed]],
@@ -7486,22 +7627,52 @@ StyleBox[\"tolerance\",
 FontSlant->\"Italic\"]\):10.^-4, \!\(\*
 StyleBox[\"accuracyGoal\",
 FontSlant->\"Italic\"]\):6 ] analyses the global stability of the BEP \
-dynamics for a centipede game of length \!\(\*
+dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule. This function numerically \
-integrates the mean dynamics (using NDSolve) starting at each of the initial \
-points provided by the user (as fourth parameter, called \!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). \
+This function numerically integrates the mean dynamics (using NDSolve) \
+starting at each of the initial points provided by the user (as fourth \
+parameter, called \!\(\*
 StyleBox[\"initialPoints\",
 FontSlant->\"Italic\"]\) above), and checks whether the final point of the \
 computed trajectory is close to the interior fixed point (computed using \!\(\*
 StyleBox[\"FloatingPointApproximateRestPoint\",
-FontSlant->\"Italic\"]\)).\n\nThe function returns the list of initial points \
-that did not lead to the vicinity of the interior rest point computed using \
-\!\(\*
+FontSlant->\"Italic\"]\)).\n\nYou can create the list of initial points \
+required as fourth parameter by using the functions RandomPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"nPoints\",
+FontSlant->\"Italic\"]\)] and MeshPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"nAgentsPerPopulation\",
+FontSlant->\"Italic\"]\)]. Thus, for example, to run the function on \
+\!\(\*SuperscriptBox[\(10\), \(6\)]\) random initial points, you can \
+evaluate:\n\n\\tNumericalGlobalStabilityOfInteriorRestPointNDSolve[ \!\(\*
+StyleBox[\"testSetRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"tieBreakingRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), RandomPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\),\!\(\*SuperscriptBox[\(10\), \(6\)]\)] ]\n\n\\tAnd \
+to run the function on a grid with mesh 1/4, you can evaluate:\n\n\
+\\tNumericalGlobalStabilityOfInteriorRestPointNDSolve[ \!\(\*
+StyleBox[\"testSetRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"tieBreakingRule\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), MeshPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\),4] ]\n\nThe function returns the list of initial \
+points that did not lead to the vicinity of the interior rest point computed \
+using \!\(\*
 StyleBox[\"FloatingPointApproximateRestPoint\",
 FontSlant->\"Italic\"]\). Thus, if the function returns an empty list, it \
 means that all computed trajectories (as many as initial points provided by \
@@ -7521,12 +7692,21 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"initialPoints\",
 FontSlant->\"Italic\"]\) is the list of initial points. Each initial point \
 must be a list containing \!\(\*
 StyleBox[\"d\",
-FontSlant->\"Italic\"]\) + 2 numbers.\n- \!\(\*
+FontSlant->\"Italic\"]\) + 2 numbers. You can use the functions RandomPoints[\
+\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"nPoints\",
+FontSlant->\"Italic\"]\)] and MeshPoints[\!\(\*
+StyleBox[\"d\",
+FontSlant->\"Italic\"]\), \!\(\*
+StyleBox[\"nAgentsPerPopulation\",
+FontSlant->\"Italic\"]\)] to create this list.\n- \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 controls the number of messages that are shown by the function. The higher \
@@ -7545,10 +7725,10 @@ kernel (up to the number of cores in the computer) and computed in parallel. \
 \n- \!\(\*
 StyleBox[\"maxTime\",
 FontSlant->\"Italic\"]\) is an optional parameter. It indicates the maximum \
-final time used when integrating the Mean Dynamics using NDSolve.\n- \!\(\*
+final time used when integrating the mean dynamics using NDSolve.\n- \!\(\*
 StyleBox[\"tolerance\",
 FontSlant->\"Italic\"]\) is an optional parameter. The integration of the \
-Mean Dynamics will stop if the norm of the difference between the last point \
+mean dynamics will stop if the norm of the difference between the last point \
 in the computed trajectory and the interior rest point computed using \!\(\*
 StyleBox[\"FloatingPointApproximateRestPoint\",
 FontSlant->\"Italic\"]\) is less than the \!\(\*
@@ -7966,7 +8146,6 @@ value of time and/or a greater value of tolerance.\\n\>\"", ",",
            RowBox[{
             RowBox[{"Print", "[", 
              RowBox[{
-             
              "\"\<All initial points evaluated led to the proximities of the \
 interior rest point.\\nWe have evaluated \>\"", ",", 
               RowBox[{"Length", "[", 
@@ -8160,7 +8339,10 @@ interior rest point might be almost globally asymptotically stable\>\""}],
    3.7002102259755373`*^9, 3.7002102264808702`*^9}, {3.700215878429797*^9, 
    3.700215882796585*^9}, {3.700215919116027*^9, 3.7002159238083763`*^9}, {
    3.7002927722776012`*^9, 3.700292785978939*^9}, 3.700292934719528*^9, {
-   3.701088591866173*^9, 3.701088618325677*^9}},
+   3.701088591866173*^9, 3.701088618325677*^9}, {3.70150049790416*^9, 
+   3.7015005016958437`*^9}, 3.701500713266591*^9, 3.7015007535860653`*^9, 
+   3.701501023105448*^9, {3.7015231026263866`*^9, 3.701523170866694*^9}, {
+   3.701523216827087*^9, 3.701523217306535*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"66820d2c-f57a-4fd4-b57b-7128969015a3"]
 }, Closed]],
@@ -8211,14 +8393,14 @@ StyleBox[\"tolerance\",
 FontSlant->\"Italic\"]\):10.^-4, \!\(\*
 StyleBox[\"accuracyGoal\",
 FontSlant->\"Italic\"]\):6 ] numerically integrates the BEP dynamics for a \
-centipede game of length \!\(\*
+Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule. The numerical integration is \
-conducted using NDSolve (a \!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). The \
+numerical integration is conducted using NDSolve (a \!\(\*
 StyleBox[\"Mathematica\",
 FontSlant->\"Italic\"]\) function), starting at the initial point provided by \
 the user (as fourth parameter, called \!\(\*
@@ -8260,7 +8442,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"initialPoint\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is the initial point, \
 provided as a list containing \!\(\*
@@ -8277,12 +8459,12 @@ any function. 0 prints no messages. 10 prints all implemented messages.\n- \!\
 \(\*
 StyleBox[\"maxTime\",
 FontSlant->\"Italic\"]\) is an optional parameter. It indicates the maximum \
-final time used when integrating the Mean Dynamics using NDSolve. If the norm \
+final time used when integrating the mean dynamics using NDSolve. If the norm \
 of the mean dynamics gets sufficiently small, then the integration stops (see \
 below).\n- \!\(\*
 StyleBox[\"tolerance\",
 FontSlant->\"Italic\"]\) is an optional parameter. The integration of the \
-Mean Dynamics will stop if the norm of the mean dynamics is less than the \
+mean dynamics will stop if the norm of the mean dynamics is less than the \
 \!\(\*
 StyleBox[\"tolerance\",
 FontSlant->\"Italic\"]\).\n- \!\(\*
@@ -8753,7 +8935,9 @@ starting at the initial point: \>\"", ",", " ", "initialPoint"}], "]"}],
    3.701090732734398*^9, 3.701090733711979*^9}, {3.701091086039632*^9, 
    3.701091152444364*^9}, {3.7010911825705833`*^9, 3.701091184043187*^9}, {
    3.701091276835565*^9, 3.70109131374354*^9}, {3.70109150448072*^9, 
-   3.701091522497307*^9}, {3.701091602077574*^9, 3.701091638144745*^9}},
+   3.701091522497307*^9}, {3.701091602077574*^9, 3.701091638144745*^9}, {
+   3.70150050269567*^9, 3.701500503809793*^9}, {3.701500715785728*^9, 
+   3.701500717337585*^9}, 3.701501026467618*^9},
  Background->GrayLevel[
   0.85],ExpressionUUID->"50c872db-3501-4f36-9411-4a9f8b17e216"]
 }, Closed]],
@@ -8786,14 +8970,14 @@ StyleBox[\"d\",
 FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] analyzes the local stability of the vertex rest \
-point of the BEP dynamics for a centipede game of length \!\(\*
+point of the BEP dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), using \!\(\*
 StyleBox[\"testSetRule\",
 FontSlant->\"Italic\"]\) as test set rule and \!\(\*
 StyleBox[\"tieBreakingRule\",
-FontSlant->\"Italic\"]\) as tie breaking rule. For details, see the paper.\n\n\
-The function returns \!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). For \
+details, see the paper.\n\nThe function returns \!\(\*
 StyleBox[\"True\",
 FontSlant->\"Italic\",
 FontVariations->{\"Underline\"->True}]\) if the conducted analysis concludes \
@@ -8814,7 +8998,7 @@ Possible values are: \\\"min\\\" (min if tie), \\\"stick\\\" (stick if tie) \
 or \\\"unif\\\" (uniform if tie).\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 controls the number of messages that are shown by the function. The higher \
@@ -9238,7 +9422,8 @@ hyperplane):\\n\>\"", ",", "p"}], "]"}], ";"}]}], "\[IndentingNewLine]",
    3.700303334505275*^9}, 3.700303445701496*^9, 3.700303572780676*^9, {
    3.7003036066909924`*^9, 3.700303612977455*^9}, {3.700303687095602*^9, 
    3.700303718729123*^9}, {3.7003037494653187`*^9, 3.700303802587161*^9}, {
-   3.700303863183503*^9, 3.7003038637140017`*^9}},
+   3.700303863183503*^9, 3.7003038637140017`*^9}, {3.7015005067787046`*^9, 
+   3.701500509365942*^9}, 3.701501029875709*^9},
  Background->GrayLevel[
   0.85],ExpressionUUID->"895edc6f-5982-4677-a995-fdb13e435fec"]
 }, Closed]],
@@ -9308,7 +9493,7 @@ StyleBox[\"trials\",
 FontSlant->\"Italic\"]\):1, \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] returns the mean dynamics of the BEP dynamics \
-for a centipede game of length \!\(\*
+for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), where agents use \!\(\*
 StyleBox[\"test\",
@@ -9335,7 +9520,7 @@ FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"trials\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 indicates the number of trials used to test each strategy.\n- \!\(\*
@@ -9346,7 +9531,7 @@ the value of verbosity, the more messages are printed along the execution of \
 any function. 0 prints no messages. 10 prints all implemented \
 messages.\>\""}], " ", ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
-   RowBox[{"The", " ", "Mean", " ", "Dynamics"}], " ", 
+   RowBox[{"The", " ", "mean", " ", "dynamics"}], " ", 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -10068,8 +10253,8 @@ FontSlant->\"Italic\"]\), \!\(\*
 StyleBox[\"trials\",
 FontSlant->\"Italic\"]\):1, \!\(\*
 StyleBox[\"verbosity\",
-FontSlant->\"Italic\"]\):1 ] returns the approximate interior rest point of \
-the BEP dynamics for a centipede game of length \!\(\*
+FontSlant->\"Italic\"]\):1 ] returns an approximate rest point of the BEP \
+dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), where agents use \!\(\*
 StyleBox[\"test\",
@@ -10090,15 +10275,21 @@ StyleBox[\"tie\",
 FontSlant->\"Italic\"]\) as tie breaking rule, and they test each strategy \
 using \!\(\*
 StyleBox[\"trials\",
-FontSlant->\"Italic\"]\) number of trials. This function employs the \!\(\*
+FontSlant->\"Italic\"]\) number of trials. This approximate rest point is \
+computed by applying the \!\(\*
 StyleBox[\"Mathematica\",
-FontSlant->\"Italic\"]\) function FindRoot.\n\n\!\(\*
+FontSlant->\"Italic\"]\) function FindRoot on the appropriate mean dynamics. \
+You can find more details about FindRoot in the \!\(\*
+StyleBox[\"Mathematica\",
+FontSlant->\"Italic\"]\)\!\(\*
+StyleBox[\" \",
+FontSlant->\"Italic\"]\)documentation. \n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"trials\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 indicates the number of trials used to test each strategy.\n- \!\(\*
@@ -10235,7 +10426,7 @@ StyleBox[\"tolerance\",
 FontSlant->\"Italic\"]\):10.^-4, \!\(\*
 StyleBox[\"accuracyGoal\",
 FontSlant->\"Italic\"]\):6 ] numerically integrates the BEP dynamics for a \
-centipede game of length \!\(\*
+Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), where agents use \!\(\*
 StyleBox[\"test\",
@@ -10291,7 +10482,7 @@ FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"trials\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is an integer that \
 indicates the number of trials used to test each strategy.\n- \!\(\*
@@ -10311,12 +10502,12 @@ any function. 0 prints no messages. 10 prints all implemented messages.\n- \!\
 \(\*
 StyleBox[\"maxTime\",
 FontSlant->\"Italic\"]\) is an optional parameter. It indicates the maximum \
-final time used when integrating the Mean Dynamics using NDSolve. If the norm \
+final time used when integrating the mean dynamics using NDSolve. If the norm \
 of the mean dynamics gets sufficiently small, then the integration stops (see \
 below).\n- \!\(\*
 StyleBox[\"tolerance\",
 FontSlant->\"Italic\"]\) is an optional parameter. The integration of the \
-Mean Dynamics will stop if the norm of the mean dynamics is less than the \
+mean dynamics will stop if the norm of the mean dynamics is less than the \
 \!\(\*
 StyleBox[\"tolerance\",
 FontSlant->\"Italic\"]\).\n- \!\(\*
@@ -10725,7 +10916,11 @@ starting at the initial point: \>\"", ",", " ", "initialPoint"}], "]"}],
    3.7010918631224403`*^9, 3.701091863179676*^9}, {3.701094030451824*^9, 
    3.701094065416683*^9}, {3.701172042199535*^9, 3.701172108573131*^9}, {
    3.7011731088755207`*^9, 3.7011731089541683`*^9}, {3.7012645832694407`*^9, 
-   3.701264630266247*^9}, {3.7012647185646772`*^9, 3.701264752076232*^9}},
+   3.701264630266247*^9}, {3.7012647185646772`*^9, 3.701264752076232*^9}, {
+   3.701500511067511*^9, 3.7015005326457567`*^9}, {3.70150072055646*^9, 
+   3.701500756095648*^9}, {3.701528253085202*^9, 3.701528358190032*^9}, {
+   3.7015285551269913`*^9, 3.701528556764388*^9}, {3.701591646642468*^9, 
+   3.7015916685964823`*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"895edc6f-5982-4677-a995-fdb13e435fec"]
 }, Closed]],
@@ -10800,7 +10995,7 @@ StyleBox[\"b\",
 FontSlant->\"Italic\"]\):0, \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] returns the mean dynamics of the BEP dynamics \
-for a centipede game of length \!\(\*
+for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), where a fraction \!\(\*
 StyleBox[\"b\",
@@ -10821,13 +11016,29 @@ FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"-\",
 FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"tie\",
-FontSlant->\"Italic\"]\) as tie breaking rule.\n\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). \
+Variables x[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] and y[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] in the equations returned by this function refer to \
+the population of BEP agents, i.e. \!\(\*
+StyleBox[\"excluding\",
+FontSlant->\"Italic\",
+FontVariations->{\"Underline\"->True}]\) the backward induction agents. Thus, \
+both the sum of x[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] and of y[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] are equal to 1-\!\(\*
+StyleBox[\"b\",
+FontSlant->\"Italic\"]\).\n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"b\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is a number in the \
 range [0,1) that indicates the fraction of backward induction agents in each \
@@ -10839,7 +11050,7 @@ the value of verbosity, the more messages are printed along the execution of \
 any function. 0 prints no messages. 10 prints all implemented \
 messages.\>\""}], " ", ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
-   RowBox[{"The", " ", "Mean", " ", "Dynamics"}], " ", 
+   RowBox[{"The", " ", "mean", " ", "dynamics"}], " ", 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -11112,7 +11323,7 @@ StyleBox[\"b\",
 FontSlant->\"Italic\"]\):0, \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] returns the approximate interior rest point of \
-the BEP dynamics for a centipede game of length \!\(\*
+the BEP dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), where a fraction \!\(\*
 StyleBox[\"b\",
@@ -11133,23 +11344,28 @@ FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"-\",
 FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"tie\",
-FontSlant->\"Italic\"]\) as tie breaking rule. The output of this function \
-refers to the population \!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). The \
+output of this function refers to the population of BEP agents, i.e. \!\(\*
 StyleBox[\"excluding\",
 FontSlant->\"Italic\",
 FontVariations->{\"Underline\"->True}]\) the backward induction agents. Thus, \
-both the sum of x[i] and of y[i] will be equal to 1-b.\n\nThis function \
-employs the Euler method to find a fixed point of the equation \n\\t \
-\!\(\*SubscriptBox[\(x\), \(t + 1\)]\) = \!\(\*SubscriptBox[\(x\), \(t\)]\) + \
-step * MeanDynamics(\!\(\*SubscriptBox[\(x\), \(t\)]\)) \n      using \
-floating-point arithmetic and starting from the center of the simplices.\n\n\
-\!\(\*
+both the sum of x[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] and of y[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] will be equal to 1-\!\(\*
+StyleBox[\"b\",
+FontSlant->\"Italic\"]\).\n\nThis function employs the Euler method to find a \
+fixed point of the equation \n\\t \!\(\*SubscriptBox[\(x\), \(t + 1\)]\) = \!\
+\(\*SubscriptBox[\(x\), \(t\)]\) + step * MeanDynamics(\!\(\*SubscriptBox[\(x\
+\), \(t\)]\)) \n      using floating-point arithmetic and starting from the \
+center of the simplices.\n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"b\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is a number in the \
 range [0,1) that indicates the fraction of backward induction agents in each \
@@ -11419,7 +11635,10 @@ magnitude of the step used in the Euler method.\>\""}], " ", ";"}],
    3.701160193952302*^9, 3.7011602423207703`*^9}, {3.701162108259822*^9, 
    3.7011621107170973`*^9}, {3.7011621610176783`*^9, 
    3.7011621899315987`*^9}, {3.701171171328534*^9, 3.701171193136053*^9}, 
-   3.701171290351638*^9},
+   3.701171290351638*^9, {3.701500539201556*^9, 3.701500543792238*^9}, 
+   3.70150074270472*^9, {3.7015010566168737`*^9, 3.70150106104961*^9}, {
+   3.701528651421954*^9, 3.701528720811461*^9}, {3.7015288406930237`*^9, 
+   3.7015288467895603`*^9}},
  Background->GrayLevel[
   0.85],ExpressionUUID->"895edc6f-5982-4677-a995-fdb13e435fec"]
 }, Closed]],
@@ -11494,7 +11713,7 @@ StyleBox[\"b\",
 FontSlant->\"Italic\"]\):0, \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] returns the mean dynamics of the BEP dynamics \
-for a centipede game of length \!\(\*
+for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), where a fraction \!\(\*
 StyleBox[\"b\",
@@ -11515,13 +11734,29 @@ FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"-\",
 FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"tie\",
-FontSlant->\"Italic\"]\) as tie breaking rule.\n\n\!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). \
+Variables x[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] and y[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] in the equations returned by this function refer to \
+the population of BEP agents, i.e. \!\(\*
+StyleBox[\"excluding\",
+FontSlant->\"Italic\",
+FontVariations->{\"Underline\"->True}]\) the backward induction agents. Thus, \
+both the sum of x[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] and of y[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] are equal to 1-\!\(\*
+StyleBox[\"b\",
+FontSlant->\"Italic\"]\).\n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"b\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is a number in the \
 range [0,1) that indicates the fraction of backward induction agents in each \
@@ -11533,7 +11768,7 @@ the value of verbosity, the more messages are printed along the execution of \
 any function. 0 prints no messages. 10 prints all implemented \
 messages.\>\""}], " ", ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
-   RowBox[{"The", " ", "Mean", " ", "Dynamics"}], " ", 
+   RowBox[{"The", " ", "mean", " ", "dynamics"}], " ", 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -11849,7 +12084,7 @@ StyleBox[\"b\",
 FontSlant->\"Italic\"]\):0, \!\(\*
 StyleBox[\"verbosity\",
 FontSlant->\"Italic\"]\):1 ] returns the approximate interior rest point of \
-the BEP dynamics for a centipede game of length \!\(\*
+the BEP dynamics for a Centipede game of length \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\), where a fraction \!\(\*
 StyleBox[\"b\",
@@ -11870,23 +12105,28 @@ FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"-\",
 FontSlant->\"Italic\"]\)\!\(\*
 StyleBox[\"tie\",
-FontSlant->\"Italic\"]\) as tie breaking rule. The output of this function \
-refers to the population \!\(\*
+FontSlant->\"Italic\"]\) as tie breaking rule (and number of trials = 1). The \
+output of this function refers to the population of BEP agents, i.e. \!\(\*
 StyleBox[\"excluding\",
 FontSlant->\"Italic\",
 FontVariations->{\"Underline\"->True}]\) the backward induction agents. Thus, \
-both the sum of x[i] and of y[i] will be equal to 1-b.\n\nThis function \
-employs the Euler method to find a fixed point of the equation \n\\t \
-\!\(\*SubscriptBox[\(x\), \(t + 1\)]\) = \!\(\*SubscriptBox[\(x\), \(t\)]\) + \
-step * MeanDynamics(\!\(\*SubscriptBox[\(x\), \(t\)]\)) \n      using \
-floating-point arithmetic and starting from the center of the simplices.\n\n\
-\!\(\*
+both the sum of x[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] and of y[\!\(\*
+StyleBox[\"i\",
+FontSlant->\"Italic\"]\)] will be equal to 1-\!\(\*
+StyleBox[\"b\",
+FontSlant->\"Italic\"]\).\n\nThis function employs the Euler method to find a \
+fixed point of the equation \n\\t \!\(\*SubscriptBox[\(x\), \(t + 1\)]\) = \!\
+\(\*SubscriptBox[\(x\), \(t\)]\) + step * MeanDynamics(\!\(\*SubscriptBox[\(x\
+\), \(t\)]\)) \n      using floating-point arithmetic and starting from the \
+center of the simplices.\n\n\!\(\*
 StyleBox[\"PARAMETERS\",
 FontWeight->\"Bold\",
 FontVariations->{\"Underline\"->True}]\):\n- \!\(\*
 StyleBox[\"d\",
 FontSlant->\"Italic\"]\) is an integer that indicates the number of nodes in \
-the centipede game.\n- \!\(\*
+the Centipede game.\n- \!\(\*
 StyleBox[\"b\",
 FontSlant->\"Italic\"]\) is an optional parameter. It is a number in the \
 range [0,1) that indicates the fraction of backward induction agents in each \
@@ -12151,7 +12391,11 @@ magnitude of the step used in the Euler method.\>\""}], " ", ";"}],
    3.7011543440213633`*^9, 3.701154415105685*^9}, 3.70115453377503*^9, {
    3.701156400346266*^9, 3.701156401244088*^9}, {3.701161988219187*^9, 
    3.701162038055059*^9}, {3.701162295379047*^9, 3.701162296332746*^9}, {
-   3.7011711951295233`*^9, 3.7011712150737133`*^9}, 3.701171304526917*^9},
+   3.7011711951295233`*^9, 3.7011712150737133`*^9}, 3.701171304526917*^9, {
+   3.701500545704092*^9, 3.701500549856077*^9}, 3.701500743583143*^9, {
+   3.701501067439412*^9, 3.701501073346201*^9}, {3.701528873340972*^9, 
+   3.701528874375663*^9}, {3.701528907361506*^9, 3.7015289194666452`*^9}, 
+   3.701528964255611*^9},
  Background->GrayLevel[
   0.85],ExpressionUUID->"895edc6f-5982-4677-a995-fdb13e435fec"]
 }, Closed]]
@@ -12184,22 +12428,22 @@ Cell[BoxData[
  RowBox[{"?", 
   "FloatingPointApproximateRestPointTestAllMinIfTieManyTrials"}]], "Input",
  CellChangeTimes->{3.700414268475787*^9, 
-  3.701264814841784*^9},ExpressionUUID->"3ecf68c5-04d7-43a9-9597-\
-f89c16bee496"],
+  3.701264814841784*^9},ExpressionUUID->"18c57370-d27e-40ea-aee8-\
+481567601731"],
 
 Cell[BoxData[
  RowBox[{"?", 
   "FloatingPointApproximateRestPointTestAllMinIfTieWithBIAgents"}]], "Input",
  CellChangeTimes->{
-  3.701171217209049*^9},ExpressionUUID->"d7b94279-daa5-4794-b158-\
-fdde6083c023"],
+  3.701171217209049*^9},ExpressionUUID->"8d448d92-87de-4ee2-8d96-\
+f82b12456944"],
 
 Cell[BoxData[
  RowBox[{"?", 
   "FloatingPointApproximateRestPointTestTwoMinIfTieWithBIAgents"}]], "Input",
  CellChangeTimes->{
-  3.701171218727824*^9},ExpressionUUID->"1ae0c8e6-0be3-4fa6-8f42-\
-b6f2d05ba5fc"],
+  3.701171218727824*^9},ExpressionUUID->"7be13048-f02f-47b4-b1b2-\
+963d48c0c439"],
 
 Cell[BoxData[
  RowBox[{"?", "GlobalStabilityOfInteriorRestPoint"}]], "Input",
@@ -12207,7 +12451,7 @@ Cell[BoxData[
   3.70030479646489*^9},ExpressionUUID->"becbdfd2-f182-459f-97ee-46b0966f8a5e"],
 
 Cell[BoxData[
- RowBox[{"?", "InstabilityOfVertexRestPoint"}]], "Input",ExpressionUUID->"e2cf33ab-78d0-4033-b94a-2591e06e9cc4"],
+ RowBox[{"?", "InstabilityOfVertexRestPoint"}]], "Input",ExpressionUUID->"8cd12fd1-7b1b-46e1-b2f9-f5b89835e153"],
 
 Cell[BoxData[
  RowBox[{"?", "JacobianOfMeanDynamics"}]], "Input",
@@ -12233,14 +12477,14 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"?", "MeanDynamicsTestAllMinIfTieWithBIAgents"}]], "Input",
  CellChangeTimes->{{3.701095856828974*^9, 3.701095860395589*^9}, 
-   3.701171223981502*^9},ExpressionUUID->"d0ef384d-cf7a-4bfb-9b8b-\
-0b53916147e3"],
+   3.701171223981502*^9},ExpressionUUID->"2681646b-b146-4632-9b80-\
+6d8612220b00"],
 
 Cell[BoxData[
  RowBox[{"?", "MeanDynamicsTestTwoMinIfTieWithBIAgents"}]], "Input",
  CellChangeTimes->{
-  3.701171237808791*^9},ExpressionUUID->"0e13c273-99a7-4b94-a4a3-\
-27b5134e189a"],
+  3.701171237808791*^9},ExpressionUUID->"264b53c5-2a39-4fd7-8515-\
+247eff8c8ff0"],
 
 Cell[BoxData[
  RowBox[{"?", "MeanDynamicsWithoutFirstVariables"}]], "Input",ExpressionUUID->"57aa68c6-930a-4a40-afbc-b862af53f7a8"],
@@ -12260,8 +12504,8 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"?", "NDSolveMeanDynamicsTestAllMinIfTieManyTrials"}]], "Input",
  CellChangeTimes->{{3.701088782502306*^9, 3.701088786967463*^9}, 
-   3.701264666633009*^9},ExpressionUUID->"3ba4efb6-a6c9-4a52-b3f7-\
-afebd38e73ce"],
+   3.701264666633009*^9},ExpressionUUID->"810f18a1-47b9-4c99-b717-\
+7e8d26bb20c9"],
 
 Cell[BoxData[
  RowBox[{"?", "NEigenvaluesAtRationalApproximateRestPoint"}]], "Input",Express\
@@ -12280,6 +12524,9 @@ Cell[BoxData[
  CellChangeTimes->{
   3.7003865102802153`*^9},ExpressionUUID->"2785b9b3-20bd-47be-a15e-\
 29068c5fd31b"],
+
+Cell[BoxData[
+ RowBox[{"?", "PostProjectedJacobian"}]], "Input",ExpressionUUID->"63efb794-185c-452b-8d4a-07aa5704e990"],
 
 Cell[BoxData[
  RowBox[{"?", "ProjectedJacobian"}]], "Input",
@@ -12318,11 +12565,11 @@ Cell["Examples of usage", "Section",
 
 Cell[CellGroupData[{
 
-Cell["Mean Dynamics", "Subsection",
+Cell["Mean dynamics", "Subsection",
  InitializationGroup->False,
  CellChangeTimes->{{3.6929637613180933`*^9, 3.692963781949512*^9}, {
-  3.699252066728178*^9, 
-  3.699252068647614*^9}},ExpressionUUID->"9e4c3019-1f48-4f2d-b705-\
+   3.699252066728178*^9, 3.699252068647614*^9}, 
+   3.701500693914688*^9},ExpressionUUID->"9e4c3019-1f48-4f2d-b705-\
 843878f6f6d7"],
 
 Cell[CellGroupData[{
@@ -12468,6 +12715,31 @@ Cell[BoxData[
    3.697566836173965*^9}, {3.699251855363674*^9, 3.699251875555171*^9}, {
    3.699252136294084*^9, 
    3.699252146282957*^9}},ExpressionUUID->"c44ff677-587c-4c3a-adb0-\
+d8d4f89d9c1f"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "PostProjectedJacobian"}]], "Input",
+ CellChangeTimes->{
+  3.696763330784102*^9, 3.696828541359873*^9, {3.697566835656211*^9, 
+   3.697566836173965*^9}, {3.699251855363674*^9, 3.699251875555171*^9}, {
+   3.699252136294084*^9, 3.699252146282957*^9}, {3.7015021867664747`*^9, 
+   3.701502187429934*^9}},ExpressionUUID->"51b49342-ab63-45bb-af9a-\
+b0c133b0c3d2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PostProjectedJacobian", "[", 
+   RowBox[{"MeanDynamics", "[", 
+    RowBox[{"\"\<all\>\"", ",", "\"\<min\>\"", ",", "3"}], "]"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{
+  3.696763330784102*^9, 3.696828541359873*^9, {3.697566835656211*^9, 
+   3.697566836173965*^9}, {3.699251855363674*^9, 3.699251875555171*^9}, {
+   3.699252136294084*^9, 3.699252146282957*^9}, 
+   3.701502191514985*^9},ExpressionUUID->"c44ff677-587c-4c3a-adb0-\
 d8d4f89d9c1f"]
 }, Closed]]
 }, Closed]],
@@ -12761,18 +13033,15 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
-Cell["\<\
-Numerical global stability of interior rest point (numerical evaluation of an \
-approximate Lyapunov function)\
-\>", "Subsection",
+Cell["Creation of points in the simplices", "Subsection",
  InitializationGroup->False,
  CellChangeTimes->{{3.6929637613180933`*^9, 3.692963781949512*^9}, {
    3.699252066728178*^9, 3.699252068647614*^9}, {3.699252101453247*^9, 
    3.6992521026445217`*^9}, {3.699252184748106*^9, 3.699252189020989*^9}, {
    3.6992526135049143`*^9, 3.699252615121192*^9}, {3.699252657421712*^9, 
-   3.699252659097137*^9}, 
-   3.700144501718858*^9},ExpressionUUID->"6bd999bd-8142-47d1-9f29-\
-dc9536222bf0"],
+   3.699252659097137*^9}, 3.700144480546052*^9, {3.701499467583372*^9, 
+   3.70149949854115*^9}},ExpressionUUID->"e58618c9-c208-45cc-af3e-\
+4fb1400091ef"],
 
 Cell[CellGroupData[{
 
@@ -12786,13 +13055,9 @@ Cell[BoxData[
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{
-   RowBox[{"d", "=", "20"}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
   RowBox[{"points", "=", 
    RowBox[{"MeshPoints", "[", 
-    RowBox[{"d", ",", "4"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"20", ",", "4"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Print", "[", 
    RowBox[{"\"\<We have created \>\"", ",", 
@@ -12803,10 +13068,55 @@ Cell[BoxData[{
    RowBox[{"[", 
     RowBox[{"1", ";;", "30"}], "]"}], "]"}], "]"}]}], "Input",
  CellChangeTimes->{{3.700218023195176*^9, 3.700218072731091*^9}, {
-   3.700218189973974*^9, 3.700218215501642*^9}, 
-   3.7011548955202503`*^9},ExpressionUUID->"3e4030d6-731a-4b81-939d-\
+   3.700218189973974*^9, 3.700218215501642*^9}, 3.7011548955202503`*^9, {
+   3.701499129069511*^9, 3.70149913298069*^9}, {3.701499626793486*^9, 
+   3.701499651689027*^9}},ExpressionUUID->"3e4030d6-731a-4b81-939d-\
 06f00294a1d7"]
 }, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "RandomPoints"}]], "Input",ExpressionUUID->"f54b9c44-f2df-4c49-9355-bc12d7574658"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"points", "=", 
+   RowBox[{"RandomPoints", "[", 
+    RowBox[{"20", ",", 
+     RowBox[{"10", "^", "6"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<We have created \>\"", ",", 
+    RowBox[{"Length", "[", "points", "]"}], ",", " ", "\"\< points\>\""}], 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", 
+  RowBox[{"points", "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ";;", "30"}], "]"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.700218170195838*^9, 3.700218184091564*^9}, {
+  3.700218268384533*^9, 3.7002182684812593`*^9}, {3.700218304614791*^9, 
+  3.700218305789566*^9}, {3.701499357117332*^9, 3.7014993572063427`*^9}, {
+  3.701499589060611*^9, 3.701499606024826*^9}, {3.701499660441597*^9, 
+  3.701499670240818*^9}},ExpressionUUID->"7b67ea5a-2b1b-4432-8b5d-\
+1eeddfef136e"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Numerical global stability of interior rest point (numerical evaluation of an \
+approximate Lyapunov function)\
+\>", "Subsection",
+ InitializationGroup->False,
+ CellChangeTimes->{{3.6929637613180933`*^9, 3.692963781949512*^9}, {
+   3.699252066728178*^9, 3.699252068647614*^9}, {3.699252101453247*^9, 
+   3.6992521026445217`*^9}, {3.699252184748106*^9, 3.699252189020989*^9}, {
+   3.6992526135049143`*^9, 3.699252615121192*^9}, {3.699252657421712*^9, 
+   3.699252659097137*^9}, 
+   3.700144501718858*^9},ExpressionUUID->"6bd999bd-8142-47d1-9f29-\
+dc9536222bf0"],
 
 Cell[CellGroupData[{
 
@@ -12826,9 +13136,19 @@ Cell[BoxData[
 48d047021597"],
 
 Cell[BoxData[
- RowBox[{"NumericalGlobalStabilityOfInteriorRestPointLyapunov", "[", 
-  RowBox[{"\"\<all\>\"", ",", "\"\<stick\>\"", ",", "d", ",", "points"}], 
-  "]"}]], "Input",
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Numerically", " ", "check", " ", "the", " ", "global", " ", "stability", 
+    " ", "of", " ", "the", " ", "interior", " ", "rest", " ", "point", " ", 
+    "evaluating", " ", "the", " ", "tentative", " ", "Lyapunov", " ", 
+    "function", " ", "on", " ", "a", " ", "grid", " ", "with", " ", "mesh", 
+    " ", 
+    RowBox[{"1", "/", "4"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"NumericalGlobalStabilityOfInteriorRestPointLyapunov", "[", 
+   RowBox[{"\"\<all\>\"", ",", "\"\<stick\>\"", ",", "20", ",", 
+    RowBox[{"MeshPoints", "[", 
+     RowBox[{"20", ",", "4"}], "]"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.700210262550235*^9, 3.700210265784132*^9}, {
    3.7002152581203413`*^9, 3.7002153059122467`*^9}, 3.700215344656228*^9, {
    3.700215405607229*^9, 3.70021541744563*^9}, {3.700215468072336*^9, 
@@ -12838,7 +13158,39 @@ Cell[BoxData[
    3.700216327034216*^9, 3.700216333841016*^9}, {3.700217170319777*^9, 
    3.7002172173153*^9}, {3.700217269967248*^9, 3.70021733312628*^9}, {
    3.700218008542409*^9, 3.7002180160104647`*^9}, {3.700218114360363*^9, 
-   3.700218123540133*^9}},ExpressionUUID->"42f0fdf7-54c5-4c35-852d-\
+   3.700218123540133*^9}, {3.7014990764734898`*^9, 3.701499088227951*^9}, {
+   3.7014991489336967`*^9, 3.7014992521528273`*^9}, {3.7014992887617598`*^9, 
+   3.701499294430757*^9}},ExpressionUUID->"42f0fdf7-54c5-4c35-852d-\
+2b9d99ce4a30"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Numerically", " ", "check", " ", "the", " ", "global", " ", "stability", 
+    " ", "of", " ", "the", " ", "interior", " ", "rest", " ", "point", " ", 
+    "evaluating", " ", "the", " ", "tentative", " ", "Lyapunov", " ", 
+    "function", " ", "on", " ", 
+    RowBox[{"10", "^", "6"}], " ", "random", " ", "points"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"NumericalGlobalStabilityOfInteriorRestPointLyapunov", "[", 
+   RowBox[{"\"\<all\>\"", ",", "\"\<stick\>\"", ",", "20", ",", 
+    RowBox[{"RandomPoints", "[", 
+     RowBox[{"20", ",", 
+      RowBox[{"10", "^", "6"}]}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.700210262550235*^9, 3.700210265784132*^9}, {
+   3.7002152581203413`*^9, 3.7002153059122467`*^9}, 3.700215344656228*^9, {
+   3.700215405607229*^9, 3.70021541744563*^9}, {3.700215468072336*^9, 
+   3.70021547067591*^9}, {3.700215586779104*^9, 3.7002155908069077`*^9}, {
+   3.7002158521641617`*^9, 3.7002158522585497`*^9}, {3.7002159546987963`*^9, 
+   3.70021596716007*^9}, {3.70021603200462*^9, 3.7002160322252502`*^9}, {
+   3.700216327034216*^9, 3.700216333841016*^9}, {3.700217170319777*^9, 
+   3.7002172173153*^9}, {3.700217269967248*^9, 3.70021733312628*^9}, {
+   3.700218008542409*^9, 3.7002180160104647`*^9}, {3.700218114360363*^9, 
+   3.700218123540133*^9}, {3.7014990764734898`*^9, 3.701499088227951*^9}, {
+   3.7014991489336967`*^9, 3.7014992521528273`*^9}, {3.7014992887617598`*^9, 
+   3.701499294430757*^9}, {3.701499829026339*^9, 
+   3.7014998550346403`*^9}},ExpressionUUID->"42f0fdf7-54c5-4c35-852d-\
 2b9d99ce4a30"]
 }, Closed]]
 }, Closed]],
@@ -12859,28 +13211,6 @@ Cell["Numerical global stability of interior rest point (NDSolve)", \
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"?", "RandomPoints"}]], "Input",ExpressionUUID->"f54b9c44-f2df-4c49-9355-bc12d7574658"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"d", "=", "10"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"initialPoints", "=", 
-   RowBox[{"RandomPoints", "[", 
-    RowBox[{"d", ",", "1000"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"MatrixForm", "[", 
-  RowBox[{"initialPoints", "[", 
-   RowBox[{"[", 
-    RowBox[{"1", ";;", "30"}], "]"}], "]"}], "]"}]}], "Input",
- CellChangeTimes->{{3.700218170195838*^9, 3.700218184091564*^9}, {
-  3.700218268384533*^9, 3.7002182684812593`*^9}, {3.700218304614791*^9, 
-  3.700218305789566*^9}},ExpressionUUID->"7b67ea5a-2b1b-4432-8b5d-\
-1eeddfef136e"]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
  RowBox[{"?", "NumericalGlobalStabilityOfInteriorRestPointNDSolve"}]], "Input",\
 
  CellChangeTimes->{
@@ -12891,10 +13221,17 @@ Cell[BoxData[
 7b0f830708db"],
 
 Cell[BoxData[
- RowBox[{"NumericalGlobalStabilityOfInteriorRestPointNDSolve", "[", 
-  RowBox[{
-  "\"\<adj\>\"", ",", "\"\<stick\>\"", ",", "d", ",", "initialPoints"}], 
-  "]"}]], "Input",
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Numerically", " ", "check", " ", "the", " ", "global", " ", "stability", 
+    " ", "of", " ", "the", " ", "interior", " ", "rest", " ", "point", " ", 
+    "using", " ", "NDSolve", " ", "starting", " ", "on", " ", "1000", " ", 
+    "random", " ", "points"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"NumericalGlobalStabilityOfInteriorRestPointNDSolve", "[", 
+   RowBox[{"\"\<adj\>\"", ",", "\"\<stick\>\"", ",", "10", ",", 
+    RowBox[{"RandomPoints", "[", 
+     RowBox[{"10", ",", "1000"}], "]"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.700210262550235*^9, 3.700210265784132*^9}, {
    3.7002152581203413`*^9, 3.7002153059122467`*^9}, 3.700215344656228*^9, {
    3.700215405607229*^9, 3.70021541744563*^9}, {3.700215468072336*^9, 
@@ -12904,8 +13241,9 @@ Cell[BoxData[
    3.700216327034216*^9, 3.700216333841016*^9}, 3.7002167481456203`*^9, {
    3.7002170561278143`*^9, 3.700217117852665*^9}, 3.700217591047305*^9, {
    3.700218290954096*^9, 3.700218298438528*^9}, {3.70029288851003*^9, 
-   3.700292888576305*^9}, {3.700292981075736*^9, 
-   3.700292981243575*^9}},ExpressionUUID->"3a13e1b2-9a40-4464-9b37-\
+   3.700292888576305*^9}, {3.700292981075736*^9, 3.700292981243575*^9}, {
+   3.7015000976229353`*^9, 
+   3.701500153837895*^9}},ExpressionUUID->"3a13e1b2-9a40-4464-9b37-\
 050331d800b5"]
 }, Closed]]
 }, Closed]],
@@ -13010,23 +13348,26 @@ Cell[BoxData[
 339f033f19cf"],
 
 Cell[BoxData[
- RowBox[{"InstabilityOfVertexRestPoint", "[", 
-  RowBox[{"\"\<adj\>\"", ",", "\"\<min\>\"", ",", "10"}], "]"}]], "Input",
- CellChangeTimes->{{3.7003035108154163`*^9, 
-  3.7003035490741053`*^9}},ExpressionUUID->"7f8b20e1-1347-4d33-b3aa-\
+ RowBox[{
+  RowBox[{"InstabilityOfVertexRestPoint", "[", 
+   RowBox[{"\"\<adj\>\"", ",", "\"\<min\>\"", ",", "10"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.7003035108154163`*^9, 3.7003035490741053`*^9}, 
+   3.7015236956327333`*^9},ExpressionUUID->"7f8b20e1-1347-4d33-b3aa-\
 008232ed2a5b"],
 
 Cell[BoxData[
  RowBox[{"Table", "[", 
   RowBox[{
    RowBox[{"InstabilityOfVertexRestPoint", "[", 
-    RowBox[{"\"\<all\>\"", ",", "\"\<min\>\"", ",", "i", ",", "0"}], "]"}], 
+    RowBox[{"\"\<all\>\"", ",", "\"\<min\>\"", ",", "d", ",", "0"}], "]"}], 
    ",", 
    RowBox[{"{", 
-    RowBox[{"i", ",", "3", ",", "20"}], "}"}]}], "]"}]], "Input",
+    RowBox[{"d", ",", "3", ",", "20"}], "}"}]}], "]"}]], "Input",
  CellChangeTimes->{
   3.700285806474608*^9, 3.700303506720708*^9, {3.700303980983807*^9, 
-   3.7003039867373657`*^9}},ExpressionUUID->"ae1e37d0-24b6-4d8a-a846-\
+   3.7003039867373657`*^9}, {3.701523755485496*^9, 
+   3.7015237571804037`*^9}},ExpressionUUID->"ae1e37d0-24b6-4d8a-a846-\
 cd81a2308afa"]
 }, Closed]]
 }, Closed]],
@@ -13159,8 +13500,8 @@ Cell[BoxData[{
    3.700414547160038*^9, 3.7004146443822803`*^9}, {3.700414719567834*^9, 
    3.7004147209616547`*^9}, 3.700414814091193*^9, {3.7010919321364717`*^9, 
    3.7010919343391123`*^9}, 3.701092287642046*^9, 
-   3.7012648546897793`*^9},ExpressionUUID->"74ee10bd-7504-42ba-ba55-\
-b75c9cfe8e89"]
+   3.7012648546897793`*^9},ExpressionUUID->"b8993fc3-efa1-4601-af08-\
+db4cf09eb02a"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -13168,8 +13509,8 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"?", "NDSolveMeanDynamicsTestAllMinIfTieManyTrials"}]], "Input",
  CellChangeTimes->{{3.701088823010655*^9, 3.70108883150559*^9}, 
-   3.701264688233261*^9},ExpressionUUID->"b5fb8e76-3991-4239-b742-\
-209336ac67b8"],
+   3.701264688233261*^9},ExpressionUUID->"50f522b4-255f-4c1a-bde7-\
+65e33474e049"],
 
 Cell[BoxData[
  RowBox[{
@@ -13181,8 +13522,8 @@ Cell[BoxData[
    3.701089993165557*^9, 3.701089993243134*^9}, {3.701091793413227*^9, 
    3.701091793918563*^9}, {3.701091825395553*^9, 3.701091844778777*^9}, 
    3.701091885954566*^9, 
-   3.701264692182096*^9},ExpressionUUID->"50166b23-1f80-40dc-b52d-\
-f6edbf37272a"],
+   3.701264692182096*^9},ExpressionUUID->"f918f814-c64f-4a9f-a0fd-\
+e653c402f88c"],
 
 Cell[BoxData[
  RowBox[{"NDSolveMeanDynamicsTestAllMinIfTieManyTrials", "[", 
@@ -13195,8 +13536,8 @@ Cell[BoxData[
    3.7010900184557753`*^9, 3.701090040212*^9}, {3.701090070802128*^9, 
    3.701090100308694*^9}, {3.7011723078877993`*^9, 3.701172327609497*^9}, 
    3.7011726692313967`*^9, {3.701172952768268*^9, 3.701172959764368*^9}, 
-   3.701264694803239*^9},ExpressionUUID->"eca3a0fb-4b6c-46dd-a0cb-\
-7e400cf1ab28"],
+   3.701264694803239*^9},ExpressionUUID->"be71c8f6-e5eb-4f8e-b591-\
+8df7ae645b26"],
 
 Cell[BoxData[
  RowBox[{"NDSolveMeanDynamicsTestAllMinIfTieManyTrials", "[", 
@@ -13209,8 +13550,8 @@ Cell[BoxData[
    3.7010900184557753`*^9, 3.701090040212*^9}, {3.701090070802128*^9, 
    3.701090100308694*^9}, 3.701172291249942*^9, {3.7011723415497437`*^9, 
    3.701172367986992*^9}, 3.701172538426152*^9, 3.701172962035943*^9, 
-   3.701264697110132*^9},ExpressionUUID->"7d629ddf-bcdb-4711-9696-\
-1b5d1b136ed5"]
+   3.701264697110132*^9},ExpressionUUID->"bfc382bf-6ec3-4c15-99ee-\
+cb9ebf9789d4"]
 }, Closed]]
 }, Closed]],
 
@@ -13345,97 +13686,145 @@ Cell[BoxData[
    3.7011055150114927`*^9, 3.701105538376307*^9}, 3.701156052610114*^9, {
    3.7011561285458107`*^9, 3.7011561609219217`*^9}, {3.701156328906815*^9, 
    3.7011563376691*^9}, 
-   3.701171254424407*^9},ExpressionUUID->"43711d7c-45b1-47cf-b99b-\
-c8acc5792ba5"],
+   3.701171254424407*^9},ExpressionUUID->"aab83e86-509f-4720-9781-\
+7542271f533a"],
 
-Cell[BoxData[{
+Cell[BoxData[
  RowBox[{
-  RowBox[{"d", "=", "20"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"mesh", "=", 
-    RowBox[{"2.", "^", 
-     RowBox[{"-", "6"}]}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"listOfValuesForb", "=", 
-   RowBox[{"Range", "[", 
-    RowBox[{"0", ",", 
-     RowBox[{"1", "-", "mesh"}], ",", "mesh"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"s1", "=", 
-   RowBox[{"IntegerPart", "[", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Code", " ", "for", " ", "producing", " ", "a", " ", "graph", " ", "of", 
+    " ", "the", " ", "interior", " ", "rest", " ", "points", " ", "as", " ", 
+    "a", " ", "function", " ", "of", " ", "the", " ", "fraction", " ", 
+    StyleBox["b",
+     FontSlant->"Italic"], " ", "of", " ", "BI", " ", 
+    RowBox[{"agents", ".", " ", "Variables"}], " ", 
+    RowBox[{"x", "[", 
+     StyleBox["i",
+      FontSlant->"Italic"], "]"}], " ", "and", " ", 
+    RowBox[{"y", "[", 
+     StyleBox["i",
+      FontSlant->"Italic"], "]"}], " ", "shown", " ", "in", " ", "the", " ", 
+    "figure", " ", "refer", " ", "to", " ", "the", " ", "population", " ", 
+    "of", " ", "BEP", " ", "agents", " ", "only", " ", 
     RowBox[{
      RowBox[{"(", 
-      RowBox[{"d", "+", "3"}], ")"}], "/", "2"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"vars", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{
-     RowBox[{"x", "[", "i", "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "s1"}], "}"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"ListPlot", "[", 
+      RowBox[{"and", " ", "are", " ", "appropriately", " ", "normalized"}], 
+      ")"}], "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{"Rest", "[", 
-    RowBox[{"FoldList", "[", 
-     RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{
+    RowBox[{"d", "=", "20"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mesh", "=", 
+     RowBox[{"2.", "^", 
+      RowBox[{"-", "6"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"listOfValuesForb", "=", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"1", "-", "mesh"}], ",", "mesh"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"listOfFixedPoints", "=", 
+     RowBox[{"Map", "[", 
       RowBox[{
-       RowBox[{"Map", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"Normalize", "[", 
-           RowBox[{"#", ",", "Total"}], "]"}], "&"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"vars", "/.", 
-          RowBox[{"Map", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{
-             "FloatingPointApproximateRestPointTestAllMinIfTieWithBIAgents", 
-              "[", 
-              RowBox[{"d", ",", "#", ",", "0"}], "]"}], "&"}], ",", 
-            "listOfValuesForb"}], "]"}]}]}], "]"}], "\[Transpose]"}]}], "]"}],
-     "]"}], ",", "\[IndentingNewLine]", 
-   RowBox[{"Filling", "\[Rule]", 
-    RowBox[{"Prepend", "[", 
-     RowBox[{
-      RowBox[{"Table", "[", 
        RowBox[{
         RowBox[{
-         RowBox[{"i", "+", "1"}], "\[Rule]", 
-         RowBox[{"{", "i", "}"}]}], ",", 
-        RowBox[{"{", 
-         RowBox[{"i", ",", 
-          RowBox[{"s1", "-", "1"}]}], "}"}]}], "]"}], ",", 
-      RowBox[{"Rule", "[", 
-       RowBox[{"1", ",", "Axis"}], "]"}]}], "]"}]}], ",", 
-   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
-   RowBox[{"DataRange", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"First", "[", "listOfValuesForb", "]"}], ",", 
-      RowBox[{"Last", "[", "listOfValuesForb", "]"}]}], "}"}]}], ",", 
-   RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+        "FloatingPointApproximateRestPointTestAllMinIfTieWithBIAgents", "[", 
+         RowBox[{"d", ",", "#", ",", "0"}], "]"}], "&"}], ",", 
+       "listOfValuesForb"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-   "PlotLabel", "\[Rule]", 
-    "\"\<Population 1: BEP(\!\(\*SuperscriptBox[\(\[Tau]\), \(all\)]\), 1, \!\
-\(\*SuperscriptBox[\(\[Beta]\), \(min\)]\)) agents\>\""}], ",", 
-   RowBox[{"Frame", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"True", ",", "True", ",", "False", ",", "False"}], "}"}]}], ",", 
-   
-   RowBox[{"PlotLegends", "\[Rule]", 
-    RowBox[{"Map", "[", 
-     RowBox[{"ToString", ",", "vars"}], "]"}]}], ",", 
-   RowBox[{"FrameLabel", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"\"\<\!\(\*
+    RowBox[{"s1", "=", 
+     RowBox[{"IntegerPart", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"d", "+", "3"}], ")"}], "/", "2"}], "]"}]}], ";", 
+    RowBox[{"xVars", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"x", "[", "i", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "s1"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"s2", "=", 
+     RowBox[{"IntegerPart", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"d", "+", "2"}], ")"}], "/", "2"}], "]"}]}], ";", 
+    RowBox[{"yVars", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"y", "[", "i", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "s2"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MapIndexed", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ListPlot", "[", 
+         RowBox[{
+          RowBox[{"Rest", "[", 
+           RowBox[{"FoldList", "[", 
+            RowBox[{"Plus", ",", "0", ",", 
+             RowBox[{
+              RowBox[{"Map", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Normalize", "[", 
+                  RowBox[{"#", ",", "Total"}], "]"}], "&"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"#1", "/.", "listOfFixedPoints"}]}], "]"}], 
+              "\[Transpose]"}]}], "]"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Filling", "\[Rule]", 
+           RowBox[{"Prepend", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"i", "+", "1"}], "\[Rule]", 
+                RowBox[{"{", "i", "}"}]}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"s1", "-", "1"}]}], "}"}]}], "]"}], ",", 
+             RowBox[{"Rule", "[", 
+              RowBox[{"1", ",", "Axis"}], "]"}]}], "]"}]}], ",", 
+          RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+          RowBox[{"DataRange", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"First", "[", "listOfValuesForb", "]"}], ",", 
+             RowBox[{"Last", "[", "listOfValuesForb", "]"}]}], "}"}]}], ",", 
+          RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+          RowBox[{"PlotLabel", "\[Rule]", 
+           RowBox[{"\"\<Population \>\"", "<>", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"First", "[", "#2", "]"}], "]"}], "<>", 
+            "\"\<: BEP(\!\(\*SuperscriptBox[\(\[Tau]\), \(all\)]\), 1, \
+\!\(\*SuperscriptBox[\(\[Beta]\), \(min\)]\)) agents\>\""}]}], ",", 
+          RowBox[{"Frame", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"True", ",", "True", ",", "False", ",", "False"}], 
+            "}"}]}], ",", 
+          RowBox[{"PlotLegends", "\[Rule]", 
+           RowBox[{"Map", "[", 
+            RowBox[{"ToString", ",", "#1"}], "]"}]}], ",", 
+          RowBox[{"FrameLabel", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\"\<\!\(\*
 StyleBox[\"b\",
-FontSlant->\"Italic\"]\)\>\"", ",", "None"}], "}"}]}]}], "]"}]}], "Input",
+FontSlant->\"Italic\"]\)\>\"", ",", "None"}], "}"}]}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], "&"}], 
+       "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"xVars", ",", "yVars"}], "}"}]}], "]"}], 
+     "\[IndentingNewLine]", ",", "\"\<                \>\"", ",", " ", 
+     RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+     RowBox[{"FrameMargins", "\[Rule]", "15"}], ",", 
+     RowBox[{"RoundingRadius", "\[Rule]", "15"}]}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.7011511163876047`*^9, 3.701151119806636*^9}, {
    3.701151172175173*^9, 3.701151180342725*^9}, {3.701151220235669*^9, 
    3.701151306881922*^9}, {3.701151474167762*^9, 3.701151505451825*^9}, {
@@ -13447,9 +13836,16 @@ FontSlant->\"Italic\"]\)\>\"", ",", "None"}], "}"}]}]}], "]"}]}], "Input",
    3.7011528507448606`*^9, 3.701152911424486*^9}, {3.7011529815136137`*^9, 
    3.7011529937647867`*^9}, {3.7011530307085667`*^9, 3.701153071475872*^9}, {
    3.701153174830515*^9, 3.701153175740573*^9}, 3.701153375167433*^9, {
-   3.701164250070302*^9, 3.7011642772705936`*^9}, 
-   3.7011712563264513`*^9},ExpressionUUID->"d018fc47-7185-434d-9751-\
-613a98e7f21c"]
+   3.701164250070302*^9, 3.7011642772705936`*^9}, 3.7011712563264513`*^9, {
+   3.7015290871791067`*^9, 3.7015292085895443`*^9}, {3.701529282481148*^9, 
+   3.701529396398446*^9}, {3.701529448756793*^9, 3.701529511093799*^9}, {
+   3.701529558579644*^9, 3.70152959347646*^9}, {3.701533956784236*^9, 
+   3.7015340491686687`*^9}, {3.701534515968083*^9, 3.701534675842023*^9}, {
+   3.7015347163082447`*^9, 3.701534808050349*^9}, {3.701534838381071*^9, 
+   3.7015348710060463`*^9}, 3.701535202477738*^9, {3.7015352358463573`*^9, 
+   3.701535235968872*^9}, 
+   3.701535755676351*^9},ExpressionUUID->"07f7b923-84fd-44e2-8aa3-\
+11a6fb8e359c"]
 }, Closed]]
 }, Closed]],
 
@@ -13581,8 +13977,8 @@ Cell[BoxData[
    3.7011053170577517`*^9}, {3.701105456007504*^9, 3.701105475962441*^9}, {
    3.7011055150114927`*^9, 3.701105538376307*^9}, {3.701149833645032*^9, 
    3.7011498339927807`*^9}, 
-   3.7011712657644444`*^9},ExpressionUUID->"04205046-23ef-412a-aeca-\
-cf5acf96fcec"],
+   3.7011712657644444`*^9},ExpressionUUID->"3eb76ec4-71e7-46b3-abaa-\
+757510d5f101"],
 
 Cell[BoxData[{
  RowBox[{
@@ -13591,8 +13987,28 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"mesh", "=", 
     RowBox[{"2.", "^", 
-     RowBox[{"-", "6"}]}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+     RowBox[{"-", "6"}]}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Code", " ", "for", " ", "producing", " ", "a", " ", "graph", " ", "of", 
+    " ", "the", " ", "interior", " ", "rest", " ", "points", " ", "as", " ", 
+    "a", " ", "function", " ", "of", " ", "the", " ", "fraction", " ", 
+    StyleBox["b",
+     FontSlant->"Italic"], " ", "of", " ", "BI", " ", 
+    RowBox[{"agents", ".", " ", "Variables"}], " ", 
+    RowBox[{"x", "[", 
+     StyleBox["i",
+      FontSlant->"Italic"], "]"}], " ", "and", " ", 
+    RowBox[{"y", "[", 
+     StyleBox["i",
+      FontSlant->"Italic"], "]"}], " ", "shown", " ", "in", " ", "the", " ", 
+    "figure", " ", "refer", " ", "to", " ", "the", " ", "population", " ", 
+    "of", " ", "BEP", " ", "agents", " ", "only", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"and", " ", "are", " ", "appropriately", " ", "normalized"}], 
+      ")"}], "."}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"listOfValuesForb", "=", 
    RowBox[{"Range", "[", 
@@ -13600,88 +14016,117 @@ Cell[BoxData[{
      RowBox[{"1", "-", "mesh"}], ",", "mesh"}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{"listOfFixedPoints", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+      "FloatingPointApproximateRestPointTestTwoMinIfTieWithBIAgents", "[", 
+       RowBox[{"d", ",", "#", ",", "0"}], "]"}], "&"}], ",", 
+     "listOfValuesForb"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"s1", "=", 
    RowBox[{"IntegerPart", "[", 
     RowBox[{
      RowBox[{"(", 
-      RowBox[{"d", "+", "3"}], ")"}], "/", "2"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"vars", "=", 
+      RowBox[{"d", "+", "3"}], ")"}], "/", "2"}], "]"}]}], ";", 
+  RowBox[{"xVars", "=", 
    RowBox[{"Table", "[", 
     RowBox[{
      RowBox[{"x", "[", "i", "]"}], ",", 
      RowBox[{"{", 
       RowBox[{"i", ",", "s1"}], "}"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
- RowBox[{"ListPlot", "[", 
+ RowBox[{
+  RowBox[{"s2", "=", 
+   RowBox[{"IntegerPart", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"d", "+", "2"}], ")"}], "/", "2"}], "]"}]}], ";", 
+  RowBox[{"yVars", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"y", "[", "i", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "s2"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Row", "[", "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{"Rest", "[", 
-    RowBox[{"FoldList", "[", 
-     RowBox[{"Plus", ",", "0", ",", 
-      RowBox[{
-       RowBox[{"Map", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"Normalize", "[", 
-           RowBox[{"#", ",", "Total"}], "]"}], "&"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"vars", "/.", 
-          RowBox[{"Map", "[", 
+   RowBox[{"MapIndexed", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{"Rest", "[", 
+         RowBox[{"FoldList", "[", 
+          RowBox[{"Plus", ",", "0", ",", 
            RowBox[{
+            RowBox[{"Map", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Normalize", "[", 
+                RowBox[{"#", ",", "Total"}], "]"}], "&"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"#1", "/.", "listOfFixedPoints"}]}], "]"}], 
+            "\[Transpose]"}]}], "]"}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Filling", "\[Rule]", 
+         RowBox[{"Prepend", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
             RowBox[{
              RowBox[{
-             "FloatingPointApproximateRestPointTestTwoMinIfTieWithBIAgents", 
-              "[", 
-              RowBox[{"d", ",", "#", ",", "0"}], "]"}], "&"}], ",", 
-            "listOfValuesForb"}], "]"}]}]}], "]"}], "\[Transpose]"}]}], "]"}],
-     "]"}], ",", "\[IndentingNewLine]", 
-   RowBox[{"Filling", "\[Rule]", 
-    RowBox[{"Prepend", "[", 
-     RowBox[{
-      RowBox[{"Table", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"i", "+", "1"}], "\[Rule]", 
-         RowBox[{"{", "i", "}"}]}], ",", 
-        RowBox[{"{", 
-         RowBox[{"i", ",", 
-          RowBox[{"s1", "-", "1"}]}], "}"}]}], "]"}], ",", 
-      RowBox[{"Rule", "[", 
-       RowBox[{"1", ",", "Axis"}], "]"}]}], "]"}]}], ",", 
-   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
-   RowBox[{"DataRange", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"First", "[", "listOfValuesForb", "]"}], ",", 
-      RowBox[{"Last", "[", "listOfValuesForb", "]"}]}], "}"}]}], ",", 
-   RowBox[{"Axes", "\[Rule]", "False"}], ",", 
-   RowBox[{
-   "PlotLabel", "\[Rule]", 
-    "\"\<Population 1: BEP(\!\(\*SuperscriptBox[\(\[Tau]\), \(two\)]\), 1, \!\
-\(\*SuperscriptBox[\(\[Beta]\), \(min\)]\)) agents\>\""}], ",", 
-   RowBox[{"Frame", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"True", ",", "True", ",", "False", ",", "False"}], "}"}]}], ",", 
-   
-   RowBox[{"PlotLegends", "\[Rule]", 
-    RowBox[{"Map", "[", 
-     RowBox[{"ToString", ",", "vars"}], "]"}]}], ",", 
-   RowBox[{"FrameLabel", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"\"\<\!\(\*
+              RowBox[{"i", "+", "1"}], "\[Rule]", 
+              RowBox[{"{", "i", "}"}]}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"s1", "-", "1"}]}], "}"}]}], "]"}], ",", 
+           RowBox[{"Rule", "[", 
+            RowBox[{"1", ",", "Axis"}], "]"}]}], "]"}]}], ",", 
+        RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+        RowBox[{"DataRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"First", "[", "listOfValuesForb", "]"}], ",", 
+           RowBox[{"Last", "[", "listOfValuesForb", "]"}]}], "}"}]}], ",", 
+        RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+        RowBox[{"PlotLabel", "\[Rule]", 
+         RowBox[{"\"\<Population \>\"", "<>", 
+          RowBox[{"ToString", "[", 
+           RowBox[{"First", "[", "#2", "]"}], "]"}], "<>", 
+          "\"\<: BEP(\!\(\*SuperscriptBox[\(\[Tau]\), \(two\)]\), 1, \
+\!\(\*SuperscriptBox[\(\[Beta]\), \(min\)]\)) agents\>\""}]}], ",", 
+        RowBox[{"Frame", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"True", ",", "True", ",", "False", ",", "False"}], "}"}]}], 
+        ",", 
+        RowBox[{"PlotLegends", "\[Rule]", 
+         RowBox[{"Map", "[", 
+          RowBox[{"ToString", ",", "#1"}], "]"}]}], ",", 
+        RowBox[{"FrameLabel", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<\!\(\*
 StyleBox[\"b\",
-FontSlant->\"Italic\"]\)\>\"", ",", "None"}], "}"}]}]}], "]"}]}], "Input",
+FontSlant->\"Italic\"]\)\>\"", ",", "None"}], "}"}]}], ",", 
+        RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], "&"}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"xVars", ",", "yVars"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+   ",", "\"\<                \>\"", ",", " ", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameMargins", "\[Rule]", "15"}], ",", 
+   RowBox[{"RoundingRadius", "\[Rule]", "15"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.701153299456132*^9, 3.701153304741333*^9}, 
    3.701153370948903*^9, {3.701164297126854*^9, 3.701164297227799*^9}, 
-   3.701171266980174*^9},ExpressionUUID->"4793eb31-ae73-4664-a3f6-\
-17570b6bdb44"]
+   3.701171266980174*^9, {3.701534947890394*^9, 3.701535014692882*^9}, {
+   3.701535196023078*^9, 3.701535197077162*^9}, {3.701535712735531*^9, 
+   3.701535731284636*^9}},ExpressionUUID->"da2c251b-bb35-44cc-a9e2-\
+4c4d52091e50"]
 }, Closed]]
 }, Closed]]
 }, Open  ]]
 },
 CellGrouping->Manual,
-WindowSize->{1283, 1091},
+WindowSize->{1280, 687},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 16, \
 2017)",
@@ -13714,86 +14159,86 @@ Cell[1078, 31, 849, 24, 51, "Subtitle", "ExpressionUUID" -> \
 Cell[CellGroupData[{
 Cell[1964, 60, 444, 7, 64, "Section", "ExpressionUUID" -> \
 "4009a82b-8634-48ab-b894-d305596c1f3a"],
-Cell[2411, 69, 2281, 53, 410, "Text", "ExpressionUUID" -> \
-"f33e998f-43b2-4711-949b-525f09a5687d"]
+Cell[2411, 69, 2445, 57, 448, "Text", "ExpressionUUID" -> \
+"8359490b-f256-47f9-935c-eabc8ae0a58a"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[4729, 127, 364, 7, 50, "Section", "ExpressionUUID" -> \
+Cell[4893, 131, 364, 7, 50, "Section", "ExpressionUUID" -> \
 "3a0f0b5f-5d2b-48b3-a735-41fc074714f2",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True],
 Cell[CellGroupData[{
-Cell[5118, 138, 220, 5, 44, "Subsection", "ExpressionUUID" -> \
+Cell[5282, 142, 220, 5, 44, "Subsection", "ExpressionUUID" -> \
 "2dcb9602-f293-4fbd-8927-29165a5c5729",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[5341, 145, 3345, 69, 215, "Input", "ExpressionUUID" -> \
+Cell[5505, 149, 3345, 69, 215, "Input", "ExpressionUUID" -> \
 "7298d53a-acd3-4dfa-9dfd-b145f7b3c07b",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[8723, 219, 274, 6, 36, "Subsection", "ExpressionUUID" -> \
+Cell[8887, 223, 274, 6, 36, "Subsection", "ExpressionUUID" -> \
 "2dcb9602-f293-4fbd-8927-29165a5c5729",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[9000, 227, 2986, 64, 130, "Input", "ExpressionUUID" -> \
+Cell[9164, 231, 2986, 64, 130, "Input", "ExpressionUUID" -> \
 "7298d53a-acd3-4dfa-9dfd-b145f7b3c07b",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[12023, 296, 417, 8, 36, "Subsection", "ExpressionUUID" -> \
+Cell[12187, 300, 439, 8, 36, "Subsection", "ExpressionUUID" -> \
 "8580c788-4465-4f77-ae5e-d51feadf8abb",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True],
 Cell[CellGroupData[{
-Cell[12465, 308, 245, 4, 35, "Subsubsection", "ExpressionUUID" -> \
+Cell[12651, 312, 245, 4, 35, "Subsubsection", "ExpressionUUID" -> \
 "1b196b6f-fbd4-4e81-82cd-63c76644ee97"],
-Cell[12713, 314, 23739, 517, 2019, "Input", "ExpressionUUID" -> \
+Cell[12899, 318, 23950, 520, 2019, "Input", "ExpressionUUID" -> \
 "4d4eb097-fedb-479c-8152-96e322899a23",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[36489, 836, 366, 7, 29, "Subsubsection", "ExpressionUUID" -> \
+Cell[36886, 843, 366, 7, 35, "Subsubsection", "ExpressionUUID" -> \
 "d6f123b3-168d-4f2c-a6b6-5970bccd0a6a",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True],
 Cell[CellGroupData[{
-Cell[36880, 847, 280, 6, 30, "Text", "ExpressionUUID" -> \
+Cell[37277, 854, 280, 6, 30, "Text", "ExpressionUUID" -> \
 "0eedcf7c-8915-4ad9-858c-22c175cf5299",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[37163, 855, 7568, 201, 450, "Input", "ExpressionUUID" -> \
+Cell[37560, 862, 7568, 201, 450, "Input", "ExpressionUUID" -> \
 "69ee0df9-4669-4fb5-a75a-bb8452871696",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[44768, 1061, 332, 7, 30, "Text", "ExpressionUUID" -> \
+Cell[45165, 1068, 332, 7, 30, "Text", "ExpressionUUID" -> \
 "e7bc30fd-a215-4ff2-a009-13c7bda62096",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[45103, 1070, 11844, 307, 455, "Input", "ExpressionUUID" -> \
+Cell[45500, 1077, 11844, 307, 455, "Input", "ExpressionUUID" -> \
 "b668e1cc-7797-4ca1-803b-92b1a398c69b",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[56984, 1382, 284, 6, 30, "Text", "ExpressionUUID" -> \
+Cell[57381, 1389, 284, 6, 30, "Text", "ExpressionUUID" -> \
 "f12cde70-d1a1-4f2e-a1c9-53508bdcbec4",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[57271, 1390, 8340, 225, 508, "Input", "ExpressionUUID" -> \
+Cell[57668, 1397, 8340, 225, 508, "Input", "ExpressionUUID" -> \
 "bdebfd05-7766-4534-a566-db047d910d52",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
@@ -13801,39 +14246,39 @@ Cell[57271, 1390, 8340, 225, 508, "Input", "ExpressionUUID" -> \
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[65660, 1621, 417, 8, 29, "Subsubsection", "ExpressionUUID" -> \
+Cell[66057, 1628, 417, 8, 29, "Subsubsection", "ExpressionUUID" -> \
 "3d0c2034-5ff4-4bc2-a677-3c4fa3038d0c",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True],
 Cell[CellGroupData[{
-Cell[66102, 1633, 280, 6, 30, "Text", "ExpressionUUID" -> \
+Cell[66499, 1640, 280, 6, 30, "Text", "ExpressionUUID" -> \
 "a11fa556-628a-4cbd-95b6-6b6012e58e2b",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[66385, 1641, 8065, 201, 301, "Input", "ExpressionUUID" -> \
+Cell[66782, 1648, 8065, 201, 301, "Input", "ExpressionUUID" -> \
 "3867e3e1-9488-4dc6-89db-4b86edb7d67b",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[74487, 1847, 282, 6, 30, "Text", "ExpressionUUID" -> \
+Cell[74884, 1854, 282, 6, 30, "Text", "ExpressionUUID" -> \
 "afc827b2-8d8e-4050-81b0-09ad9ac2bee7",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[74772, 1855, 8715, 218, 348, "Input", "ExpressionUUID" -> \
+Cell[75169, 1862, 8715, 218, 348, "Input", "ExpressionUUID" -> \
 "1f8017ea-6769-45e0-9d38-ef20759317a4",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[83524, 2078, 284, 6, 30, "Text", "ExpressionUUID" -> \
+Cell[83921, 2085, 284, 6, 30, "Text", "ExpressionUUID" -> \
 "ad366fe5-8626-421e-8214-196ae5600540",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[83811, 2086, 8607, 219, 348, "Input", "ExpressionUUID" -> \
+Cell[84208, 2093, 8607, 219, 348, "Input", "ExpressionUUID" -> \
 "2ffaec68-da07-4843-bfad-5e6d96df6f88",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
@@ -13841,39 +14286,39 @@ Cell[83811, 2086, 8607, 219, 348, "Input", "ExpressionUUID" -> \
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[92467, 2311, 419, 8, 29, "Subsubsection", "ExpressionUUID" -> \
+Cell[92864, 2318, 419, 8, 29, "Subsubsection", "ExpressionUUID" -> \
 "2eddc65b-50b7-460f-8d26-0c479f701de0",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True],
 Cell[CellGroupData[{
-Cell[92911, 2323, 282, 6, 30, "Text", "ExpressionUUID" -> \
+Cell[93308, 2330, 282, 6, 30, "Text", "ExpressionUUID" -> \
 "b49e8314-86b8-47ae-ad78-bcd70081eb2e",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[93196, 2331, 10850, 266, 379, "Input", "ExpressionUUID" -> \
+Cell[93593, 2338, 10850, 266, 379, "Input", "ExpressionUUID" -> \
 "ce572374-25eb-47a6-af4d-329b8c34bab3",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[104083, 2602, 334, 7, 30, "Text", "ExpressionUUID" -> \
+Cell[104480, 2609, 334, 7, 30, "Text", "ExpressionUUID" -> \
 "daf349c7-1cb9-49bf-a4d8-5a7a4c7cc29c",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[104420, 2611, 13482, 322, 567, "Input", "ExpressionUUID" -> \
+Cell[104817, 2618, 13482, 322, 567, "Input", "ExpressionUUID" -> \
 "5cfe8e23-be22-4856-9871-0b5719b5fd6d",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[117939, 2938, 284, 6, 30, "Text", "ExpressionUUID" -> \
+Cell[118336, 2945, 284, 6, 30, "Text", "ExpressionUUID" -> \
 "11dea85e-ed93-447c-9fc5-8c950b85bec5",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[118226, 2946, 11524, 288, 379, "Input", "ExpressionUUID" -> \
+Cell[118623, 2953, 11524, 288, 379, "Input", "ExpressionUUID" -> \
 "bea904e1-5481-4e5d-a7de-2c9327246ef1",
  CellGroupingRules->{"GroupTogetherGrouping", 10001.},
  InitializationCell->True,
@@ -13882,148 +14327,148 @@ Cell[118226, 2946, 11524, 288, 379, "Input", "ExpressionUUID" -> \
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[129811, 3241, 312, 7, 36, "Subsection", "ExpressionUUID" -> \
+Cell[130208, 3248, 312, 7, 36, "Subsection", "ExpressionUUID" -> \
 "bbb933f8-30c3-4f47-83c7-5a4aa2304c17",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[130126, 3250, 12912, 313, 1282, "Input", "ExpressionUUID" -> \
+Cell[130523, 3257, 16004, 380, 1675, "Input", "ExpressionUUID" -> \
 "8d5b138f-de6f-4a09-9825-27418d4ee3d9",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[143075, 3568, 398, 8, 36, "Subsection", "ExpressionUUID" -> \
+Cell[146564, 3642, 398, 8, 36, "Subsection", "ExpressionUUID" -> \
 "ea2e59c7-aa89-4370-b457-cd778de4d818",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[143476, 3578, 21781, 468, 1593, "Input", "ExpressionUUID" -> \
+Cell[146965, 3652, 22026, 472, 1678, "Input", "ExpressionUUID" -> \
 "f09878dc-df6e-450e-a7ae-27b2f26e9eeb",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[165294, 4051, 525, 11, 36, "Subsection", "ExpressionUUID" -> \
+Cell[169028, 4129, 525, 11, 36, "Subsection", "ExpressionUUID" -> \
 "9741be4a-3c29-47c9-896e-9e3a7dbb031f",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[165822, 4064, 31898, 656, 1966, "Input", "ExpressionUUID" -> \
+Cell[169556, 4142, 32242, 660, 2411, "Input", "ExpressionUUID" -> \
 "5c293add-696a-41fa-a1fc-79001887ac42",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[197757, 4725, 541, 10, 36, "Subsection", "ExpressionUUID" -> \
+Cell[201835, 4807, 541, 10, 44, "Subsection", "ExpressionUUID" -> \
 "d57bf0b2-7a95-4682-82fb-54305dc96b80",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[198301, 4737, 18302, 364, 1122, "Input", "ExpressionUUID" -> \
+Cell[202379, 4819, 18458, 367, 1122, "Input", "ExpressionUUID" -> \
 "ef3ddae7-5ab7-4988-8529-aade0de221fe",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[216640, 5106, 724, 14, 36, "Subsection", "ExpressionUUID" -> \
+Cell[220874, 5191, 724, 14, 36, "Subsection", "ExpressionUUID" -> \
 "3007b06d-e525-45c6-9e50-b9338c6d4522",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[217367, 5122, 36908, 755, 2433, "Input", "ExpressionUUID" -> \
+Cell[221601, 5207, 37235, 759, 2952, "Input", "ExpressionUUID" -> \
 "71f3c586-8ec3-49fe-903a-a7d8435bb841",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[254312, 5882, 754, 14, 36, "Subsection", "ExpressionUUID" -> \
+Cell[258873, 5971, 754, 14, 44, "Subsection", "ExpressionUUID" -> \
 "dea0ee0c-8cd9-417f-90b2-211bde3765f7",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[255069, 5898, 29584, 581, 1711, "Input", "ExpressionUUID" -> \
+Cell[259630, 5987, 29865, 585, 2233, "Input", "ExpressionUUID" -> \
 "2b651595-f338-40b9-a1d5-41518a1d1265",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[284690, 6484, 857, 14, 36, "Subsection", "ExpressionUUID" -> \
+Cell[289532, 6577, 857, 14, 44, "Subsection", "ExpressionUUID" -> \
 "3c94bdab-101e-4ea8-954f-837729b157b9",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[285550, 6500, 15166, 323, 406, "Input", "ExpressionUUID" -> \
+Cell[290392, 6593, 15216, 324, 334, "Input", "ExpressionUUID" -> \
 "a4367b14-d13a-4ff4-9e7d-07e41b41b398",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[300753, 6828, 897, 16, 36, "Subsection", "ExpressionUUID" -> \
+Cell[305645, 6922, 897, 16, 36, "Subsection", "ExpressionUUID" -> \
 "5fff5317-0f27-4699-8ff3-5bd42c3fe345",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[301653, 6846, 30611, 593, 2526, "Input", "ExpressionUUID" -> \
+Cell[306545, 6940, 32632, 640, 2736, "Input", "ExpressionUUID" -> \
 "b2c2fb22-6e42-4220-8464-04d0f0df3c52",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[332301, 7444, 890, 15, 36, "Subsection", "ExpressionUUID" -> \
+Cell[339214, 7585, 890, 15, 44, "Subsection", "ExpressionUUID" -> \
 "51dfba0a-20f4-4ad9-8192-c5e8f39094c2",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[333194, 7461, 35738, 703, 2213, "Input", "ExpressionUUID" -> \
+Cell[340107, 7602, 37447, 744, 2916, "Input", "ExpressionUUID" -> \
 "66820d2c-f57a-4fd4-b57b-7128969015a3",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[368969, 8169, 1010, 16, 36, "Subsection", "ExpressionUUID" -> \
+Cell[377591, 8351, 1010, 16, 44, "Subsection", "ExpressionUUID" -> \
 "6dcca70e-3035-4ac9-8adb-a747bdd929aa",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[369982, 8187, 28999, 570, 1244, "Input", "ExpressionUUID" -> \
+Cell[378604, 8369, 29147, 572, 1244, "Input", "ExpressionUUID" -> \
 "50c872db-3501-4f36-9411-4a9f8b17e216",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[399018, 8762, 561, 10, 36, "Subsection", "ExpressionUUID" -> \
+Cell[407788, 8946, 561, 10, 36, "Subsection", "ExpressionUUID" -> \
 "146c33ec-1a58-447f-a90c-c7e01fd5977e",
  InitializationCell->True,
  InitializationGroup->True],
-Cell[399582, 8774, 21644, 468, 2023, "Input", "ExpressionUUID" -> \
+Cell[408352, 8958, 21745, 469, 1643, "Input", "ExpressionUUID" -> \
 "895edc6f-5982-4677-a995-fdb13e435fec",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[421263, 9247, 556, 9, 36, "Subsection", "ExpressionUUID" -> \
+Cell[430134, 9432, 556, 9, 36, "Subsection", "ExpressionUUID" -> \
 "146c33ec-1a58-447f-a90c-c7e01fd5977e"],
-Cell[421822, 9258, 60266, 1471, 4109, "Input", "ExpressionUUID" -> \
+Cell[430693, 9443, 60742, 1481, 4953, "Input", "ExpressionUUID" -> \
 "895edc6f-5982-4677-a995-fdb13e435fec",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[482125, 10734, 799, 14, 36, "Subsection", "ExpressionUUID" -> \
+Cell[491472, 10929, 799, 14, 36, "Subsection", "ExpressionUUID" -> \
 "146c33ec-1a58-447f-a90c-c7e01fd5977e"],
-Cell[482927, 10750, 30035, 673, 1680, "Input", "ExpressionUUID" -> \
+Cell[492274, 10945, 30997, 697, 2011, "Input", "ExpressionUUID" -> \
 "895edc6f-5982-4677-a995-fdb13e435fec",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
  InitializationGroup->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[512999, 11428, 801, 14, 36, "Subsection", "ExpressionUUID" -> \
+Cell[523308, 11647, 801, 14, 44, "Subsection", "ExpressionUUID" -> \
 "146c33ec-1a58-447f-a90c-c7e01fd5977e"],
-Cell[513803, 11444, 31594, 711, 1640, "Input", "ExpressionUUID" -> \
+Cell[524112, 11663, 32580, 736, 1972, "Input", "ExpressionUUID" -> \
 "895edc6f-5982-4677-a995-fdb13e435fec",
  CellGroupingRules->{"GroupTogetherGrouping", 10000.},
  InitializationCell->True,
@@ -14031,311 +14476,326 @@ Cell[513803, 11444, 31594, 711, 1640, "Input", "ExpressionUUID" -> \
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[545446, 12161, 422, 6, 50, "Section", "ExpressionUUID" -> \
+Cell[556741, 12405, 422, 6, 50, "Section", "ExpressionUUID" -> \
 "4009a82b-8634-48ab-b894-d305596c1f3a"],
-Cell[545871, 12169, 141, 2, 28, "Input", "ExpressionUUID" -> \
+Cell[557166, 12413, 141, 2, 32, "Input", "ExpressionUUID" -> \
 "5f6e5ccc-c24e-4664-9250-22cd80bae77c"],
-Cell[546015, 12173, 186, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[557310, 12417, 186, 4, 32, "Input", "ExpressionUUID" -> \
 "919d6535-b535-400d-b698-8b7ff2545666"],
-Cell[546204, 12179, 131, 1, 28, "Input", "ExpressionUUID" -> \
+Cell[557499, 12423, 131, 1, 32, "Input", "ExpressionUUID" -> \
 "17412e27-4c67-40b4-8586-c09c66b09d33"],
-Cell[546338, 12182, 228, 5, 28, "Input", "ExpressionUUID" -> \
-"3ecf68c5-04d7-43a9-9597-f89c16bee496"],
-Cell[546569, 12189, 208, 5, 28, "Input", "ExpressionUUID" -> \
-"d7b94279-daa5-4794-b158-fdde6083c023"],
-Cell[546780, 12196, 208, 5, 28, "Input", "ExpressionUUID" -> \
-"1ae0c8e6-0be3-4fa6-8f42-b6f2d05ba5fc"],
-Cell[546991, 12203, 176, 3, 28, "Input", "ExpressionUUID" -> \
+Cell[557633, 12426, 228, 5, 32, "Input", "ExpressionUUID" -> \
+"18c57370-d27e-40ea-aee8-481567601731"],
+Cell[557864, 12433, 208, 5, 32, "Input", "ExpressionUUID" -> \
+"8d448d92-87de-4ee2-8d96-f82b12456944"],
+Cell[558075, 12440, 208, 5, 32, "Input", "ExpressionUUID" -> \
+"7be13048-f02f-47b4-b1b2-963d48c0c439"],
+Cell[558286, 12447, 176, 3, 32, "Input", "ExpressionUUID" -> \
 "becbdfd2-f182-459f-97ee-46b0966f8a5e"],
-Cell[547170, 12208, 126, 1, 28, "Input", "ExpressionUUID" -> \
-"e2cf33ab-78d0-4033-b94a-2591e06e9cc4"],
-Cell[547299, 12211, 193, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[558465, 12452, 126, 1, 32, "Input", "ExpressionUUID" -> \
+"8cd12fd1-7b1b-46e1-b2f9-f5b89835e153"],
+Cell[558594, 12455, 193, 4, 32, "Input", "ExpressionUUID" -> \
 "c62a1b3d-6689-48c1-8407-8605ac2105f7"],
-Cell[547495, 12217, 204, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[558790, 12461, 204, 4, 32, "Input", "ExpressionUUID" -> \
 "b73da2f1-7f56-474f-bf7c-02374457d46d"],
-Cell[547702, 12223, 110, 1, 28, "Input", "ExpressionUUID" -> \
+Cell[558997, 12467, 110, 1, 32, "Input", "ExpressionUUID" -> \
 "18435135-ad74-4876-9aa7-d685c594bf33"],
-Cell[547815, 12226, 204, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[559110, 12470, 204, 4, 32, "Input", "ExpressionUUID" -> \
 "21136c97-fb33-4c1c-9209-87e11d56f31f"],
-Cell[548022, 12232, 231, 4, 28, "Input", "ExpressionUUID" -> \
-"d0ef384d-cf7a-4bfb-9b8b-0b53916147e3"],
-Cell[548256, 12238, 184, 4, 28, "Input", "ExpressionUUID" -> \
-"0e13c273-99a7-4b94-a4a3-27b5134e189a"],
-Cell[548443, 12244, 131, 1, 28, "Input", "ExpressionUUID" -> \
+Cell[559317, 12476, 231, 4, 32, "Input", "ExpressionUUID" -> \
+"2681646b-b146-4632-9b80-6d8612220b00"],
+Cell[559551, 12482, 184, 4, 32, "Input", "ExpressionUUID" -> \
+"264b53c5-2a39-4fd7-8515-247eff8c8ff0"],
+Cell[559738, 12488, 131, 1, 32, "Input", "ExpressionUUID" -> \
 "57aa68c6-930a-4a40-afbc-b862af53f7a8"],
-Cell[548577, 12247, 155, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[559872, 12491, 155, 4, 32, "Input", "ExpressionUUID" -> \
 "b12eeb83-7c86-4130-bdbc-c07961d93962"],
-Cell[548735, 12253, 164, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[560030, 12497, 164, 4, 32, "Input", "ExpressionUUID" -> \
 "11259bf6-fb76-45f2-bd2d-2e3edebc1df1"],
-Cell[548902, 12259, 236, 4, 28, "Input", "ExpressionUUID" -> \
-"3ba4efb6-a6c9-4a52-b3f7-afebd38e73ce"],
-Cell[549141, 12265, 142, 2, 28, "Input", "ExpressionUUID" -> \
+Cell[560197, 12503, 236, 4, 32, "Input", "ExpressionUUID" -> \
+"810f18a1-47b9-4c99-b717-7e8d26bb20c9"],
+Cell[560436, 12509, 142, 2, 32, "Input", "ExpressionUUID" -> \
 "7305dbcc-2839-42f4-a85f-87233aa886f1"],
-Cell[549286, 12269, 201, 5, 28, "Input", "ExpressionUUID" -> \
+Cell[560581, 12513, 201, 5, 32, "Input", "ExpressionUUID" -> \
 "6c2344b0-1604-412c-813b-79d4eb28641a"],
-Cell[549490, 12276, 199, 5, 28, "Input", "ExpressionUUID" -> \
+Cell[560785, 12520, 199, 5, 32, "Input", "ExpressionUUID" -> \
 "2785b9b3-20bd-47be-a15e-29068c5fd31b"],
-Cell[549692, 12283, 188, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[560987, 12527, 119, 1, 32, "Input", "ExpressionUUID" -> \
+"63efb794-185c-452b-8d4a-07aa5704e990"],
+Cell[561109, 12530, 188, 4, 32, "Input", "ExpressionUUID" -> \
 "66d3cbdd-0ced-4715-aa09-e8bda58dabed"],
-Cell[549883, 12289, 261, 5, 28, "Input", "ExpressionUUID" -> \
+Cell[561300, 12536, 261, 5, 32, "Input", "ExpressionUUID" -> \
 "e7de3199-89e3-4626-a5ba-ae5f1d88ecfe"],
-Cell[550147, 12296, 173, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[561564, 12543, 173, 4, 32, "Input", "ExpressionUUID" -> \
 "e330d837-7187-4200-88df-ba335f126ebb"],
-Cell[550323, 12302, 156, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[561740, 12549, 156, 4, 32, "Input", "ExpressionUUID" -> \
 "7ef7945b-f6cf-4a7c-baee-66e5ac9874b7"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[550516, 12311, 308, 5, 50, "Section", "ExpressionUUID" -> \
+Cell[561933, 12558, 308, 5, 50, "Section", "ExpressionUUID" -> \
 "7414cb2e-17b8-4341-8689-80b153edcda0"],
 Cell[CellGroupData[{
-Cell[550849, 12320, 241, 5, 44, "Subsection", "ExpressionUUID" -> \
+Cell[562266, 12567, 265, 5, 44, "Subsection", "ExpressionUUID" -> \
 "9e4c3019-1f48-4f2d-b705-843878f6f6d7",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[551115, 12329, 214, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[562556, 12576, 214, 4, 28, "Input", "ExpressionUUID" -> \
 "55972b50-71ad-4df2-840c-eb5a8ce163cd",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[551354, 12337, 570, 11, 28, "Input", "ExpressionUUID" -> \
+Cell[562795, 12584, 570, 11, 28, "Input", "ExpressionUUID" -> \
 "bd05a4a3-6829-410d-a8a2-38525195e876"],
-Cell[551927, 12350, 721, 14, 46, "Input", "ExpressionUUID" -> \
+Cell[563368, 12597, 721, 14, 46, "Input", "ExpressionUUID" -> \
 "ad3440c0-9e3e-4b65-866b-e6ed785e047e"],
-Cell[552651, 12366, 680, 16, 46, "Input", "ExpressionUUID" -> \
+Cell[564092, 12613, 680, 16, 46, "Input", "ExpressionUUID" -> \
 "f0b58740-c1d4-4891-b7e5-a60caedbca5b"],
-Cell[553334, 12384, 591, 11, 28, "Input", "ExpressionUUID" -> \
+Cell[564775, 12631, 591, 11, 28, "Input", "ExpressionUUID" -> \
 "a19fbad9-9aa5-4585-8a13-1969e35be166"],
-Cell[553928, 12397, 419, 10, 46, "Input", "ExpressionUUID" -> \
+Cell[565369, 12644, 419, 10, 46, "Input", "ExpressionUUID" -> \
 "28e7b5e1-910f-489d-8ec7-bb62a0f23b8a"]
 }, Closed]]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[554408, 12414, 285, 5, 36, "Subsection", "ExpressionUUID" -> \
+Cell[565849, 12661, 285, 5, 36, "Subsection", "ExpressionUUID" -> \
 "8d79524b-d133-4787-ae06-66695923ddfc",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[554718, 12423, 439, 8, 28, "Input", "ExpressionUUID" -> \
+Cell[566159, 12670, 439, 8, 28, "Input", "ExpressionUUID" -> \
 "664becc5-5ae8-4175-ade0-e15cea13866f"],
-Cell[555160, 12433, 591, 12, 28, "Input", "ExpressionUUID" -> \
+Cell[566601, 12680, 591, 12, 28, "Input", "ExpressionUUID" -> \
 "7554b34a-218f-49bb-b5ae-73f3002d2d91"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[555788, 12450, 334, 7, 28, "Input", "ExpressionUUID" -> \
+Cell[567229, 12697, 334, 7, 22, "Input", "ExpressionUUID" -> \
 "51b49342-ab63-45bb-af9a-b0c133b0c3d2"],
-Cell[556125, 12459, 460, 11, 28, "Input", "ExpressionUUID" -> \
+Cell[567566, 12706, 460, 11, 28, "Input", "ExpressionUUID" -> \
+"c44ff677-587c-4c3a-adb0-d8d4f89d9c1f"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[568063, 12722, 386, 7, 28, "Input", "ExpressionUUID" -> \
+"51b49342-ab63-45bb-af9a-b0c133b0c3d2"],
+Cell[568452, 12731, 486, 11, 28, "Input", "ExpressionUUID" -> \
 "c44ff677-587c-4c3a-adb0-d8d4f89d9c1f"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[556634, 12476, 342, 6, 36, "Subsection", "ExpressionUUID" -> \
+Cell[568987, 12748, 342, 6, 36, "Subsection", "ExpressionUUID" -> \
 "28909755-57a8-452d-a854-0314ae2e2769",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[557001, 12486, 160, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[569354, 12758, 160, 4, 28, "Input", "ExpressionUUID" -> \
 "b221a4bb-90d9-4e47-97e3-3fa5ccb60afc"],
-Cell[557164, 12492, 720, 18, 46, "Input", "ExpressionUUID" -> \
+Cell[569517, 12764, 720, 18, 46, "Input", "ExpressionUUID" -> \
 "775d24ad-61ec-4547-8f6c-c80fb8b32d15"],
-Cell[557887, 12512, 675, 16, 46, "Input", "ExpressionUUID" -> \
+Cell[570240, 12784, 675, 16, 46, "Input", "ExpressionUUID" -> \
 "e6428bd9-7d98-43ab-9c1a-f2254dc2c68b"],
-Cell[558565, 12530, 631, 13, 46, "Input", "ExpressionUUID" -> \
+Cell[570918, 12802, 631, 13, 46, "Input", "ExpressionUUID" -> \
 "b4294e82-8b0c-4902-84a6-24d5294bbfe3"],
-Cell[559199, 12545, 559, 13, 46, "Input", "ExpressionUUID" -> \
+Cell[571552, 12817, 559, 13, 46, "Input", "ExpressionUUID" -> \
 "9a9e1e69-9c80-4d3c-ab41-dff61819d232"],
-Cell[559761, 12560, 601, 14, 46, "Input", "ExpressionUUID" -> \
+Cell[572114, 12832, 601, 14, 46, "Input", "ExpressionUUID" -> \
 "8afcdd4b-17d7-4c6e-940f-83dd6715bb16"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[560411, 12580, 399, 7, 36, "Subsection", "ExpressionUUID" -> \
+Cell[572764, 12852, 399, 7, 36, "Subsection", "ExpressionUUID" -> \
 "9ce207e4-8487-4183-873a-4baed98d6b52",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[560835, 12591, 202, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[573188, 12863, 202, 4, 28, "Input", "ExpressionUUID" -> \
 "50a9c823-a7eb-45c0-8902-7d33d8857c40"],
-Cell[561040, 12597, 490, 8, 28, "Input", "ExpressionUUID" -> \
+Cell[573393, 12869, 490, 8, 28, "Input", "ExpressionUUID" -> \
 "42161e99-2fa4-4e39-93e2-43cc4547f126"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[561567, 12610, 197, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[573920, 12882, 197, 4, 28, "Input", "ExpressionUUID" -> \
 "5466cefc-abe3-4f21-acf3-9f91c6533b82"],
-Cell[561767, 12616, 361, 8, 28, "Input", "ExpressionUUID" -> \
+Cell[574120, 12888, 361, 8, 28, "Input", "ExpressionUUID" -> \
 "0eb97416-91c3-484c-847e-c2ca1b741753"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[562177, 12630, 433, 7, 36, "Subsection", "ExpressionUUID" -> \
+Cell[574530, 12902, 433, 7, 36, "Subsection", "ExpressionUUID" -> \
 "f8ed45a1-5df6-415c-a521-df54c6dd4851",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[562635, 12641, 650, 11, 28, "Input", "ExpressionUUID" -> \
+Cell[574988, 12913, 650, 11, 28, "Input", "ExpressionUUID" -> \
 "54f0c67f-bbe7-43dd-9c79-b24f29cd2312"],
-Cell[563288, 12654, 833, 15, 28, "Input", "ExpressionUUID" -> \
+Cell[575641, 12926, 833, 15, 28, "Input", "ExpressionUUID" -> \
 "2d3918f0-efb0-4e76-8098-40f0a512befc"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[564158, 12674, 264, 5, 28, "Input", "ExpressionUUID" -> \
+Cell[576511, 12946, 264, 5, 28, "Input", "ExpressionUUID" -> \
 "e48664c1-5a5a-407f-bcb3-892438ac50b8"],
-Cell[564425, 12681, 550, 9, 28, "Input", "ExpressionUUID" -> \
+Cell[576778, 12953, 550, 9, 28, "Input", "ExpressionUUID" -> \
 "ef137e65-4b1b-4ec1-b22e-2c65a3f45fe6"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[565024, 12696, 523, 10, 36, "Subsection", "ExpressionUUID" -> \
+Cell[577377, 12968, 523, 10, 36, "Subsection", "ExpressionUUID" -> \
 "35d4ae3b-0cee-4b91-9b90-89a9190c9fa3",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[565572, 12710, 202, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[577925, 12982, 202, 4, 28, "Input", "ExpressionUUID" -> \
 "02849dfa-bf73-4582-96c7-6032d5fb1146"],
-Cell[565777, 12716, 318, 6, 28, "Input", "ExpressionUUID" -> \
+Cell[578130, 12988, 318, 6, 28, "Input", "ExpressionUUID" -> \
 "25e44fa7-d662-47e8-8588-06e727571d49"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[566144, 12728, 525, 10, 36, "Subsection", "ExpressionUUID" -> \
+Cell[578497, 13000, 525, 10, 36, "Subsection", "ExpressionUUID" -> \
 "e58618c9-c208-45cc-af3e-4fb1400091ef",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[566694, 12742, 231, 5, 28, "Input", "ExpressionUUID" -> \
+Cell[579047, 13014, 231, 5, 28, "Input", "ExpressionUUID" -> \
 "6e4f5391-f4be-417c-be55-92e870e0aa9a"],
-Cell[566928, 12749, 318, 8, 28, "Input", "ExpressionUUID" -> \
+Cell[579281, 13021, 318, 8, 28, "Input", "ExpressionUUID" -> \
 "28e2ecc3-900d-4921-a145-21b82b6d0067"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[567295, 12763, 570, 11, 36, "Subsection", "ExpressionUUID" -> \
-"6bd999bd-8142-47d1-9f29-dc9536222bf0",
+Cell[579648, 13035, 532, 8, 36, "Subsection", "ExpressionUUID" -> \
+"e58618c9-c208-45cc-af3e-4fb1400091ef",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[567890, 12778, 300, 6, 28, "Input", "ExpressionUUID" -> \
+Cell[580205, 13047, 300, 6, 28, "Input", "ExpressionUUID" -> \
 "1badf326-8465-4c0a-af66-39b3ce50a171"],
-Cell[568193, 12786, 792, 21, 97, "Input", "ExpressionUUID" -> \
+Cell[580508, 13055, 779, 18, 63, "Input", "ExpressionUUID" -> \
 "3e4030d6-731a-4b81-939d-06f00294a1d7"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[569022, 12812, 839, 13, 28, "Input", "ExpressionUUID" -> \
+Cell[581324, 13078, 110, 1, 28, "Input", "ExpressionUUID" -> \
+"f54b9c44-f2df-4c49-9355-bc12d7574658"],
+Cell[581437, 13081, 881, 20, 63, "Input", "ExpressionUUID" -> \
+"7b67ea5a-2b1b-4432-8b5d-1eeddfef136e"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[582367, 13107, 570, 11, 36, "Subsection", "ExpressionUUID" -> \
+"6bd999bd-8142-47d1-9f29-dc9536222bf0",
+ InitializationGroup->False],
+Cell[CellGroupData[{
+Cell[582962, 13122, 839, 13, 28, "Input", "ExpressionUUID" -> \
 "d8ffb0a0-1e8b-4671-bb24-48d047021597"],
-Cell[569864, 12827, 919, 14, 28, "Input", "ExpressionUUID" -> \
+Cell[583804, 13137, 1561, 26, 46, "Input", "ExpressionUUID" -> \
+"42f0fdf7-54c5-4c35-852d-2b9d99ce4a30"],
+Cell[585368, 13165, 1623, 28, 46, "Input", "ExpressionUUID" -> \
 "42f0fdf7-54c5-4c35-852d-2b9d99ce4a30"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[570832, 12847, 534, 9, 36, "Subsection", "ExpressionUUID" -> \
+Cell[587040, 13199, 534, 9, 36, "Subsection", "ExpressionUUID" -> \
 "4014ac41-5062-4e61-8a80-84c6efef47e1",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[571391, 12860, 110, 1, 28, "Input", "ExpressionUUID" -> \
-"f54b9c44-f2df-4c49-9355-bc12d7574658"],
-Cell[571504, 12863, 596, 14, 63, "Input", "ExpressionUUID" -> \
-"7b67ea5a-2b1b-4432-8b5d-1eeddfef136e"]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[572137, 12882, 395, 8, 28, "Input", "ExpressionUUID" -> \
+Cell[587599, 13212, 395, 8, 28, "Input", "ExpressionUUID" -> \
 "44e7ee4c-64cd-4e82-9a4d-7b0f830708db"],
-Cell[572535, 12892, 980, 16, 28, "Input", "ExpressionUUID" -> \
+Cell[587997, 13222, 1433, 24, 46, "Input", "ExpressionUUID" -> \
 "3a13e1b2-9a40-4464-9b37-050331d800b5"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[573564, 12914, 505, 8, 36, "Subsection", "ExpressionUUID" -> \
+Cell[589479, 13252, 505, 8, 36, "Subsection", "ExpressionUUID" -> \
 "72ad96c2-56ea-439b-b3e6-9734ed949d08",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[574094, 12926, 164, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[590009, 13264, 164, 4, 28, "Input", "ExpressionUUID" -> \
 "d2942d15-cc06-4916-b8e8-1923f9648ebc"],
-Cell[574261, 12932, 533, 13, 28, "Input", "ExpressionUUID" -> \
+Cell[590176, 13270, 533, 13, 28, "Input", "ExpressionUUID" -> \
 "ae4abd7a-081b-4224-ac3f-343865a276ba"],
-Cell[574797, 12947, 1323, 36, 80, "Input", "ExpressionUUID" -> \
+Cell[590712, 13285, 1323, 36, 80, "Input", "ExpressionUUID" -> \
 "97245497-3f84-42a4-93e9-add113ecc8c6"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[576169, 12989, 680, 12, 36, "Subsection", "ExpressionUUID" -> \
+Cell[592084, 13327, 680, 12, 36, "Subsection", "ExpressionUUID" -> \
 "5e009aeb-48ed-4bbf-b1a7-15644be7efd3",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[576874, 13005, 197, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[592789, 13343, 197, 4, 28, "Input", "ExpressionUUID" -> \
 "69c1e0dd-ceee-4e19-85fd-339f033f19cf"],
-Cell[577074, 13011, 265, 5, 28, "Input", "ExpressionUUID" -> \
+Cell[592989, 13349, 312, 7, 28, "Input", "ExpressionUUID" -> \
 "7f8b20e1-1347-4d33-b3aa-008232ed2a5b"],
-Cell[577342, 13018, 442, 11, 28, "Input", "ExpressionUUID" -> \
+Cell[593304, 13358, 494, 12, 28, "Input", "ExpressionUUID" -> \
 "ae1e37d0-24b6-4d8a-a846-cd81a2308afa"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[577833, 13035, 578, 9, 36, "Subsection", "ExpressionUUID" -> \
+Cell[593847, 13376, 578, 9, 36, "Subsection", "ExpressionUUID" -> \
 "72ad96c2-56ea-439b-b3e6-9734ed949d08",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[578436, 13048, 226, 4, 28, "Input", "ExpressionUUID" -> \
+Cell[594450, 13389, 226, 4, 32, "Input", "ExpressionUUID" -> \
 "d2942d15-cc06-4916-b8e8-1923f9648ebc"],
-Cell[578665, 13054, 499, 9, 28, "Input", "ExpressionUUID" -> \
+Cell[594679, 13395, 499, 9, 28, "Input", "ExpressionUUID" -> \
 "ae4abd7a-081b-4224-ac3f-343865a276ba"],
-Cell[579167, 13065, 1585, 42, 97, "Input", "ExpressionUUID" -> \
+Cell[595181, 13406, 1585, 42, 97, "Input", "ExpressionUUID" -> \
 "30b217e4-406f-4bb2-ad47-924a730fe453"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[580789, 13112, 253, 5, 28, "Input", "ExpressionUUID" -> \
+Cell[596803, 13453, 253, 5, 26, "Input", "ExpressionUUID" -> \
 "63f0fd15-71ee-4ccc-93cc-be12bea65457"],
-Cell[581045, 13119, 638, 10, 28, "Input", "ExpressionUUID" -> \
+Cell[597059, 13460, 638, 10, 32, "Input", "ExpressionUUID" -> \
 "97245497-3f84-42a4-93e9-add113ecc8c6"],
-Cell[581686, 13131, 1241, 31, 63, "Input", "ExpressionUUID" -> \
-"74ee10bd-7504-42ba-ba55-b75c9cfe8e89"]
+Cell[597700, 13472, 1241, 31, 75, "Input", "ExpressionUUID" -> \
+"b8993fc3-efa1-4601-af08-db4cf09eb02a"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[582964, 13167, 235, 4, 28, "Input", "ExpressionUUID" -> \
-"b5fb8e76-3991-4239-b742-209336ac67b8"],
-Cell[583202, 13173, 609, 11, 28, "Input", "ExpressionUUID" -> \
-"50166b23-1f80-40dc-b52d-f6edbf37272a"],
-Cell[583814, 13186, 612, 12, 28, "Input", "ExpressionUUID" -> \
-"eca3a0fb-4b6c-46dd-a0cb-7e400cf1ab28"],
-Cell[584429, 13200, 608, 12, 28, "Input", "ExpressionUUID" -> \
-"7d629ddf-bcdb-4711-9696-1b5d1b136ed5"]
+Cell[598978, 13508, 235, 4, 26, "Input", "ExpressionUUID" -> \
+"50f522b4-255f-4c1a-bde7-65e33474e049"],
+Cell[599216, 13514, 609, 11, 28, "Input", "ExpressionUUID" -> \
+"f918f814-c64f-4a9f-a0fd-e653c402f88c"],
+Cell[599828, 13527, 612, 12, 28, "Input", "ExpressionUUID" -> \
+"be71c8f6-e5eb-4f8e-b591-8df7ae645b26"],
+Cell[600443, 13541, 608, 12, 28, "Input", "ExpressionUUID" -> \
+"bfc382bf-6ec3-4c15-99ee-cb9ebf9789d4"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[585086, 13218, 699, 13, 36, "Subsection", "ExpressionUUID" -> \
+Cell[601100, 13559, 699, 13, 36, "Subsection", "ExpressionUUID" -> \
 "72ad96c2-56ea-439b-b3e6-9734ed949d08",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[585810, 13235, 304, 6, 28, "Input", "ExpressionUUID" -> \
+Cell[601824, 13576, 304, 6, 28, "Input", "ExpressionUUID" -> \
 "d2942d15-cc06-4916-b8e8-1923f9648ebc"],
-Cell[586117, 13243, 776, 13, 28, "Input", "ExpressionUUID" -> \
+Cell[602131, 13584, 776, 13, 28, "Input", "ExpressionUUID" -> \
 "ae4abd7a-081b-4224-ac3f-343865a276ba"],
-Cell[586896, 13258, 1834, 46, 97, "Input", "ExpressionUUID" -> \
+Cell[602910, 13599, 1834, 46, 97, "Input", "ExpressionUUID" -> \
 "30b217e4-406f-4bb2-ad47-924a730fe453"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[588767, 13309, 283, 6, 28, "Input", "ExpressionUUID" -> \
+Cell[604781, 13650, 283, 6, 22, "Input", "ExpressionUUID" -> \
 "63f0fd15-71ee-4ccc-93cc-be12bea65457"],
-Cell[589053, 13317, 1017, 16, 28, "Input", "ExpressionUUID" -> \
+Cell[605067, 13658, 1017, 16, 28, "Input", "ExpressionUUID" -> \
 "97245497-3f84-42a4-93e9-add113ecc8c6"],
-Cell[590073, 13335, 778, 13, 28, "Input", "ExpressionUUID" -> \
-"43711d7c-45b1-47cf-b99b-c8acc5792ba5"],
-Cell[590854, 13350, 3861, 101, 212, "Input", "ExpressionUUID" -> \
-"d018fc47-7185-434d-9751-613a98e7f21c"]
+Cell[606087, 13676, 778, 13, 28, "Input", "ExpressionUUID" -> \
+"aab83e86-509f-4720-9781-7542271f533a"],
+Cell[606868, 13691, 6750, 156, 347, "Input", "ExpressionUUID" -> \
+"07f7b923-84fd-44e2-8aa3-11a6fb8e359c"]
 }, Closed]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[594764, 13457, 673, 12, 36, "Subsection", "ExpressionUUID" -> \
+Cell[613667, 13853, 673, 12, 36, "Subsection", "ExpressionUUID" -> \
 "72ad96c2-56ea-439b-b3e6-9734ed949d08",
  InitializationGroup->False],
 Cell[CellGroupData[{
-Cell[595462, 13473, 304, 6, 28, "Input", "ExpressionUUID" -> \
+Cell[614365, 13869, 304, 6, 28, "Input", "ExpressionUUID" -> \
 "d2942d15-cc06-4916-b8e8-1923f9648ebc"],
-Cell[595769, 13481, 774, 13, 28, "Input", "ExpressionUUID" -> \
+Cell[614672, 13877, 774, 13, 28, "Input", "ExpressionUUID" -> \
 "ae4abd7a-081b-4224-ac3f-343865a276ba"],
-Cell[596546, 13496, 1784, 45, 97, "Input", "ExpressionUUID" -> \
+Cell[615449, 13892, 1784, 45, 97, "Input", "ExpressionUUID" -> \
 "30b217e4-406f-4bb2-ad47-924a730fe453"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[598367, 13546, 329, 6, 28, "Input", "ExpressionUUID" -> \
+Cell[617270, 13942, 329, 6, 22, "Input", "ExpressionUUID" -> \
 "63f0fd15-71ee-4ccc-93cc-be12bea65457"],
-Cell[598699, 13554, 1016, 16, 28, "Input", "ExpressionUUID" -> \
+Cell[617602, 13950, 1016, 16, 28, "Input", "ExpressionUUID" -> \
 "97245497-3f84-42a4-93e9-add113ecc8c6"],
-Cell[599718, 13572, 709, 12, 28, "Input", "ExpressionUUID" -> \
-"04205046-23ef-412a-aeca-cf5acf96fcec"],
-Cell[600430, 13586, 3130, 91, 212, "Input", "ExpressionUUID" -> \
-"4793eb31-ae73-4664-a3f6-17570b6bdb44"]
+Cell[618621, 13968, 709, 12, 28, "Input", "ExpressionUUID" -> \
+"3eb76ec4-71e7-46b3-abaa-757510d5f101"],
+Cell[619333, 13982, 5443, 140, 347, "Input", "ExpressionUUID" -> \
+"da2c251b-bb35-44cc-a9e2-4c4d52091e50"]
 }, Closed]]
 }, Closed]]
 }, Open  ]]
